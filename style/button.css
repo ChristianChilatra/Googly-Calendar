@@ -1,0 +1,16 @@
+.buttonCalendar {
+  background: transparent;
+  inline-size: 3.0625rem;
+  block-size: 2rem;
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #70757A;
+  cursor: pointer;
+}
+
+.buttonCalendar>* {
+  color: var(--gray30);
+  font: var(--button-button);
+}

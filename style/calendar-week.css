@@ -1,0 +1,203 @@
+@import url(grid-calendar-week.css);
+.calendarWeek {
+  display: grid;
+  grid-template-columns: 2.75rem repeat(7, 1fr);
+  grid-template-rows: 5.375rem repeat(31, minmax(4rem, auto));
+  grid-template-areas: "day dom lun mar mie jue vie sab";
+}
+
+.cellRowsDay {
+  font: var(--body3-regular);
+  color: var(--gray20);
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+}
+
+.cellRowsDay span {
+  position: relative;
+  inset-block-start: 0.2rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.cellRowsDay div {
+  border-block-end: 1px solid #70757A;
+}
+
+.reminder {
+  border-block-end: 1px solid #70757A;
+  border-inline-start: 1px solid #70757A;
+  cursor: pointer;
+}
+
+.reminder .note {
+  display: none;
+}
+
+.reminder:hover .note {
+  display: block;
+}
+
+.reminder .note::before {
+  content: '(Agregar Recordatorio)';
+  font: var(--body3-medium);
+  color: var(--gray30);
+  padding: 0.25rem;
+}
+
+.reminder .note {
+  background: #c6dafc;
+  inline-size: auto;
+  block-size: 50%;
+  border-radius: .25rem;
+  box-shadow: 0 0 10px rgb(0, 0, 0, .3);
+}
+
+.reminder .noteAdd {
+  background: var(--blue10);
+  color: var(--white);
+  font: var(--body2-medium);
+  border-radius: 0.25rem;
+  padding: 0.625rem;
+  margin: 0.2rem;
+  position: relative;
+  inset-inline-start: -0.5rem;
+  overflow: hidden;
+}
+
+.reminder .noteAdd p {
+  margin: 0 0 0.25rem 0;
+  white-space: nowrap;
+  inline-size: 1rem;
+}
+
+.calendarWeek a {
+  justify-self: center;
+  align-self: end;
+  text-decoration: none;
+}
+
+.calendarWeek a:hover *, .calendarWeek a:focus {
+  color: var(--blue30);
+}
+
+.calendarWeek a:hover h3 p, .calendarWeek a:focus h3 p {
+  background: var(--blue30);
+  color: var(--white);
+}
+
+.calendarWeek h3 {
+  font: var(--body1-medium);
+  color: var(--gray20);
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+}
+
+.calendarWeek h3 p {
+  font: var(--subtitle-subtitle1);
+  color: var(--gray20);
+  margin: 0.5rem 0 0 0;
+  inline-size: 2.75rem;
+  block-size: 2.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.cellRowsDay:nth-of-type(1) {
+  grid-area: day;
+  position: sticky;
+  inset-block-start: 0;
+  background: var(--white);
+  inline-size: 100%;
+  block-size: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.calendarWeek a:nth-child(1) {
+  grid-area: dom;
+  position: sticky;
+  inset-block-start: 0;
+  background: var(--white);
+  inline-size: 100%;
+  block-size: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.calendarWeek a:nth-child(2) {
+  grid-area: lun;
+  position: sticky;
+  inset-block-start: 0;
+  background: var(--white);
+  inline-size: 100%;
+  block-size: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.calendarWeek a:nth-child(3) {
+  grid-area: mar;
+  position: sticky;
+  inset-block-start: 0;
+  background: var(--white);
+  inline-size: 100%;
+  block-size: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.calendarWeek a:nth-child(4) {
+  grid-area: mie;
+  position: sticky;
+  inset-block-start: 0;
+  background: var(--white);
+  inline-size: 100%;
+  block-size: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.calendarWeek a:nth-child(5) {
+  grid-area: jue;
+  position: sticky;
+  inset-block-start: 0;
+  background: var(--white);
+  inline-size: 100%;
+  block-size: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.calendarWeek a:nth-child(6) {
+  grid-area: vie;
+  position: sticky;
+  inset-block-start: 0;
+  background: var(--white);
+  inline-size: 100%;
+  block-size: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}
+
+.calendarWeek a:nth-child(7) {
+  grid-area: sab;
+  position: sticky;
+  inset-block-start: 0;
+  background: var(--white);
+  inline-size: 100%;
+  block-size: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
+}

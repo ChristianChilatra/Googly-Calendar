@@ -1,0 +1,28 @@
+.containerHome {
+  display: flex;
+  align-items: center;
+}
+
+.containerHome .icon-side-bar {
+  font-size: 1.3rem;
+}
+
+.containerHome button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.containerHome a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.containerHome h1 {
+  display: inline-block;
+  margin: 0;
+  color: var(--gray30);
+  font-weight: 700;
+  font-size: 1.375rem;
+}

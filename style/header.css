@@ -1,0 +1,9 @@
+@import url(containerFirst.css);
+@import url(containerSecond.css);
+.navHome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  block-size: 100%;
+  padding: 0 1.5rem;
+}

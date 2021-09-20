@@ -1,0 +1,9 @@
+@import url(containerHome.css);
+@import url(containerDate.css);
+.containerFirst {
+  display: flex;
+  align-items: center;
+  inline-size: 32.8125rem;
+  gap: 3rem;
+
+}

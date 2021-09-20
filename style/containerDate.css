@@ -1,0 +1,22 @@
+.containerDate {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.containerDate h2 {
+  color: var(--gray30);
+  font: var(--subtitle-subtitle1);
+}
+
+.buttonCurrently p {
+  margin: 0;
+  font: var(--button-button);
+  color: var(--gray30);
+}
+
+.buttonPrevious, .buttonFollowing {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
