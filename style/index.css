@@ -1,8 +1,8 @@
-@import url(header.css);
-@import url(button.css);
-@import url(icons.css);
-@import url(side-bar.css);
-@import url(calendar.css);
+@import url(https://christianchilatra.github.io/Googly-Calendar/style/header.css);
+@import url(https://christianchilatra.github.io/Googly-Calendar/style/button.css);
+@import url(https://christianchilatra.github.io/Googly-Calendar/style/icons.css);
+@import url(https://christianchilatra.github.io/Googly-Calendar/style/side-bar.css);
+@import url(https://christianchilatra.github.io/Googly-Calendar/style/calendar.css);
 :root {
   font-family: 'Roboto', sans-serif;
   --white: #fffffe;
