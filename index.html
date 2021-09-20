@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/style/index.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>Google Calendario</title>
+</head>
+<body>
+  <header>
+    <nav class="navHome">
+      <div class="containerFirst">
+        <div class="containerHome">
+          <button class="iconSidebar">
+            <i class="icon-side-bar"></i>
+          </button>
+          <button class="home">
+            <a href="/index.html">
+              <img src="icon/logo-calendario.svg" alt="Logo Leonidas Esteban" width="48px" height="48px">
+              <h1>Calendario</h1>
+            </a>
+          </button>
+        </div>
+        <div class="containerDate">
+          <button class="buttonCalendar">
+            <p>Hoy</p>
+          </button>
+          <button class="buttonPrevious">
+            <i class="icon-icon-previous"></i>
+          </button>
+          <button class="buttonFollowing">
+            <i class="icon-icon-following"></i>
+          </button>
+          <h2>Fecha</h2>
+          </div>
+      </div>
+      <div class="containerSecond">
+        <select class="buttonCalendar" name="time" id="selectTime">
+          <option value="dia">Dia</option>
+          <option value="mes">Mes</option>
+          <option value="ano">Año</option>
+        </select>
+        <div class="select_arrow">
+          <i class="icon-icon-down"></i>
+        </div>
+        <img src="img/user.png" alt="imagen usuario" width="32px" height="32px">
+      </div>
+    </nav>
+    <main></main>
+  </header>
+  <section class="sideBar">
+  </section>
+  <main class="calendar">
+    <div class="calendarWeek">
+      <a href="./calendar-by-day.html">
+        <time datatime="19-09-2021">
+          <h3>DOM<P>18</P>
+          </h3>
+        </time>
+      </a>
+      <a href="./calendar-by-day.html">
+        <time datatime="19-09-2021">
+          <h3>LUN<P>19</P></h3>
+        </time>
+      </a>
+      <a href="./calendar-by-day.html">
+        <time datatime="19-09-2021">
+          <h3>MAR<P>20</P></h3>
+        </time>
+      </a>
+      <a href="./calendar-by-day.html">
+        <time datatime="19-09-2021">
+          <h3>MIÉ<P>21</P></h3>
+        </time>
+      </a>
+      <a href="./calendar-by-day.html">
+        <time datatime="19-09-2021">
+          <h3>JUE<P>22</P></h3>
+        </time>
+      </a>
+      <a href="./calendar-by-day.html">
+        <time datatime="19-09-2021">
+          <h3>VIE<P>23</P></h3>
+        </time>
+      </a>
+      <a href="./calendar-by-day.html">
+        <time datatime="19-09-2021">
+          <h3>SÁB<P>24</P></h3>
+        </time>
+      </a>
+
+      <div class="cellRowsDay">
+      </div>
+      <div class="cellRowsDay">
+        <span>HORA</span>
+        <div></div>
+      </div>
+      <div class="reminder">
+
+      </div>
+      <div class="reminder">
+
+      </div>
+      <div class="reminder">
+
+      </div>
+      <div class="reminder">
+
+      </div>
+      <div class="reminder">
+
+      </div>
+      <div class="reminder">
+
+      </div>
+      <div class="reminder">
+
+      </div>
+      <div class="cellRowsDay">
+        <span>HORA</span>
+        <div></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="cellRowsDay">
+        <span>HORA</span>
+        <div></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="cellRowsDay">
+        <span>HORA</span>
+        <div></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="cellRowsDay">
+        <span>HORA</span>
+        <div></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="cellRowsDay">
+        <span>HORA</span>
+        <div></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="cellRowsDay">
+        <span>HORA</span>
+        <div></div>
+      </div>
+      <div class="reminder">
+        <div tabindex="0" class="noteAdd" aria-label="de 17:00 a 18:30 hacer ejercicio">
+          <p>Hacer Ejercicio</p>
+          <p><time datatime="17:00">5:00</time> - <time datatime="18:30">6:30</time></p>
+        </div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="cellRowsDay">
+        <span>HORA</span>
+        <div></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="cellRowsDay">
+        <span>HORA</span>
+        <div></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="cellRowsDay">
+        <span>HORA</span>
+        <div></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div tabindex="0" class="noteAdd" aria-label="de 17:00 a 18:30 hacer ejercicio">
+          <p>Hacer Ejercicio</p>
+          <p><time datatime="17:00">5:00</time> - <time datatime="18:30">6:30</time></p>
+        </div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="cellRowsDay">
+        <span>HORA</span>
+        <div></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="cellRowsDay">
+        <span>HORA</span>
+        <div></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="cellRowsDay">
+        <span>HORA</span>
+        <div></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="cellRowsDay">
+        <span>HORA</span>
+        <div></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="cellRowsDay">
+        <span>HORA</span>
+        <div></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="cellRowsDay">
+        <span>HORA</span>
+        <div></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+      <div class="reminder">
+        <div class="note"></div>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>
