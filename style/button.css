@@ -10,7 +10,54 @@
   cursor: pointer;
 }
 
+.buttonCalendar.isDate {
+  inline-size: 100%;
+  border: none;
+}
+
+.buttonCalendar:hover{
+  background: var(--gray10);
+}
+
+.buttonCalendar:active{
+  transform: scale(.95);
+}
+
 .buttonCalendar>* {
   color: var(--gray30);
   font: var(--button-button);
+}
+
+.buttonCalendar.isBlue {
+  background: var(--blue10);
+  border: none;
+}
+
+.buttonCalendar.isBlue>* {
+  color: var(--white);
+}
+
+.buttonCalendar.isPlus {
+  background: var(--white);
+  border-radius: 1.25rem;
+  border: none;
+  inline-size: 5.5rem;
+  box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.2);
+}
+.buttonCalendar.isPlus i{
+  color: black;
+  margin-inline-end: 0.5rem;
+}
+
+.buttonCalendar.isPlus>* {
+  color: var(--blue10);
+}
+
+.buttonCalendar.isPlus-only {
+  background: var(--white);
+  border-radius: 50%;
+  border: none;
+  inline-size: 5rem;
+  block-size: 2.6rem;
+  box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.2);
 }

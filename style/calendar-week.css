@@ -2,102 +2,45 @@
 .calendarWeek {
   display: grid;
   grid-template-columns: 2.75rem repeat(7, 1fr);
-  grid-template-rows: 5.375rem repeat(31, minmax(4rem, auto));
+  grid-template-rows: 5.375rem repeat(24, minmax(2.5rem, auto));
   grid-template-areas: "day dom lun mar mie jue vie sab";
+  overflow-y: scroll;
+  block-size: calc(100vh - 4.095rem);
 }
 
-.cellRowsDay {
-  font: var(--body3-regular);
-  color: var(--gray20);
-  display: grid;
-  grid-template-columns: 5fr 1fr;
-}
-
-.cellRowsDay span {
-  position: relative;
-  inset-block-start: 0.2rem;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.cellRowsDay div {
-  border-block-end: 1px solid #70757A;
-}
-
-.reminder {
-  border-block-end: 1px solid #70757A;
-  border-inline-start: 1px solid #70757A;
-  cursor: pointer;
-}
-
-.reminder .note {
-  display: none;
-}
-
-.reminder:hover .note {
-  display: block;
-}
-
-.reminder .note::before {
-  content: '(Agregar Recordatorio)';
-  font: var(--body3-medium);
-  color: var(--gray30);
-  padding: 0.25rem;
-}
-
-.reminder .note {
-  background: #c6dafc;
-  inline-size: auto;
-  block-size: 50%;
-  border-radius: .25rem;
-  box-shadow: 0 0 10px rgb(0, 0, 0, .3);
-}
-
-.reminder .noteAdd {
-  background: var(--blue10);
-  color: var(--white);
-  font: var(--body2-medium);
-  border-radius: 0.25rem;
-  padding: 0.625rem;
-  margin: 0.2rem;
-  position: relative;
-  inset-inline-start: -0.5rem;
-  overflow: hidden;
-}
-
-.reminder .noteAdd p {
-  margin: 0 0 0.25rem 0;
-  white-space: nowrap;
-  inline-size: 1rem;
-}
-
-.calendarWeek a {
-  justify-self: center;
-  align-self: end;
+.calendarWeek .day, .cellHour:nth-of-type(1) {
   text-decoration: none;
+  position: sticky;
+  inset-block-start: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  background: var(--white);
+  display: grid;
+  grid-template-rows: auto 1fr;
+  z-index: 1;
 }
 
-.calendarWeek a:hover *, .calendarWeek a:focus {
-  color: var(--blue30);
+.calendarWeek .day span {
+  border: 1px solid #c3c8cc;
+  border-block-start: none;
+  border-inline-end: none;
 }
 
-.calendarWeek a:hover h3 p, .calendarWeek a:focus h3 p {
-  background: var(--blue30);
-  color: var(--white);
-}
-
-.calendarWeek h3 {
+.calendarWeek .day h3 {
   font: var(--body1-medium);
   color: var(--gray20);
-  margin: 0 0 0.5rem 0;
-  text-align: center;
+  margin: 0;
+  position: relative;
+  inset-block-start: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.calendarWeek h3 p {
+.calendarWeek .day h3 p {
   font: var(--subtitle-subtitle1);
-  color: var(--gray20);
-  margin: 0.5rem 0 0 0;
+  color: black;
+  margin: 0;
   inline-size: 2.75rem;
   block-size: 2.75rem;
   display: flex;
@@ -106,98 +49,68 @@
   border-radius: 50%;
 }
 
-.cellRowsDay:nth-of-type(1) {
-  grid-area: day;
-  position: sticky;
-  inset-block-start: 0;
-  background: var(--white);
-  inline-size: 100%;
-  block-size: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 1;
+.calendarWeek .day h3 p:hover, .calendarWeek .day h3:focus p {
+  background: var(--gray10);
 }
 
 .calendarWeek a:nth-child(1) {
   grid-area: dom;
-  position: sticky;
-  inset-block-start: 0;
-  background: var(--white);
-  inline-size: 100%;
-  block-size: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 1;
 }
 
 .calendarWeek a:nth-child(2) {
   grid-area: lun;
-  position: sticky;
-  inset-block-start: 0;
-  background: var(--white);
-  inline-size: 100%;
-  block-size: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 1;
 }
 
 .calendarWeek a:nth-child(3) {
   grid-area: mar;
-  position: sticky;
-  inset-block-start: 0;
-  background: var(--white);
-  inline-size: 100%;
-  block-size: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 1;
 }
 
 .calendarWeek a:nth-child(4) {
   grid-area: mie;
-  position: sticky;
-  inset-block-start: 0;
-  background: var(--white);
-  inline-size: 100%;
-  block-size: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 1;
 }
 
 .calendarWeek a:nth-child(5) {
   grid-area: jue;
-  position: sticky;
-  inset-block-start: 0;
-  background: var(--white);
-  inline-size: 100%;
-  block-size: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 1;
 }
 
 .calendarWeek a:nth-child(6) {
   grid-area: vie;
-  position: sticky;
-  inset-block-start: 0;
-  background: var(--white);
-  inline-size: 100%;
-  block-size: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 1;
 }
 
 .calendarWeek a:nth-child(7) {
   grid-area: sab;
-  position: sticky;
-  inset-block-start: 0;
-  background: var(--white);
-  inline-size: 100%;
-  block-size: 100%;
+}
+
+.cellHour {
+  font: var(--body3-regular);
+  color: var(--gray20);
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+}
+
+.cellHour span {
+  position: relative;
+  inset-block-start: 0.2rem;
   display: flex;
+  align-items: flex-end;
   justify-content: center;
-  z-index: 1;
+}
+
+/* Div contenedor de linea extra en el grid */
+
+.cellHour div {
+  border-block-end: 1px solid #c3c8cc;
+}
+
+/*-------------------------------------------*/
+
+.cellHour:nth-of-type(1) {
+  grid-area: day;
+  display: flex;
+  align-items: flex-end;
+}
+
+.cellHour:nth-of-type(1) span {
+  background: var(--white);
+  inset-block-start: 0.5rem;
 }

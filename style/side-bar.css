@@ -1,0 +1,5 @@
+@import url(miniCalendar.css);
+.wrapperSide-bar{
+  padding: 1.5rem;
+  block-size: 100%;
+}

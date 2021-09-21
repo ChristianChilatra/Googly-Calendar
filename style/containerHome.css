@@ -3,6 +3,20 @@
   align-items: center;
 }
 
+.containerHome .iconSidebar {
+  inline-size: 3rem;
+  block-size: 3rem;
+  border-radius: 50%;
+}
+
+.containerHome .iconSidebar:active{
+  transform: scale(.89);
+}
+
+.containerHome .iconSidebar:hover{
+  background: var(--gray10);
+}
+
 .containerHome .icon-side-bar {
   font-size: 1.3rem;
 }
