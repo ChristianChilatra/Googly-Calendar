@@ -7,6 +7,25 @@
   block-size: calc(100vh - 4.095rem);
 }
 
+.currentTime {
+  inline-size: 100%;
+  block-size: 2px;
+  background: red;
+  position: absolute;
+  z-index: 2;
+}
+.currentTime::before{
+  content: "";
+  display: block;
+  inline-size: .5rem;
+  block-size: .5rem;
+  background: red;
+  position: relative;
+  border-radius: 50%;
+  inset-block-start: -.19rem;
+  inset-inline-start: -.3rem;
+}
+
 .calendarWeek .day {
   text-decoration: none;
   position: sticky;

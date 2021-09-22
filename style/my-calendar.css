@@ -10,19 +10,21 @@
   user-select: none;
 }
 
-.myCalendar details {
-  transition: all 0.4s ease;
-}
-
 .myCalendar details summary {
   list-style: none;
   position: relative;
 }
 
 .myCalendar details summary::after {
-  content: url(https://christianchilatra.github.io/Googly-Calendar//icon/icon-up.svg);
+  content: url(../icon/icon-up.svg);
   position: absolute;
   inset-inline-end: 0;
+  transition: all 0.4s ease;
+}
+
+.myCalendar details[open] summary::after {
+  content: url(../icon/icon-down.svg);
+  transform: rotateZ(-180deg);
 }
 
 .myCalendar-select {
@@ -41,7 +43,7 @@
 }
 
 .myCalendar-select input::before {
-  content: url(https://christianchilatra.github.io/Googly-Calendar//icon/Icon-checkVoid.svg);
+  content: url(../icon/Icon-checkVoid.svg);
   visibility: visible;
   position: absolute;
   inset-block-start: -.1rem;
@@ -50,7 +52,7 @@
 }
 
 .myCalendar-select input:checked::before {
-  content: url(https://christianchilatra.github.io/Googly-Calendar//icon/icon-check.svg);
+  content: url(../icon/icon-check.svg);
 }
 
 .myCalendar-select label {

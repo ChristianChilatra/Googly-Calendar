@@ -2,6 +2,7 @@
   border-block-end: 1px solid #c3c8cc;
   border-inline-start: 1px solid #c3c8cc;
   cursor: pointer;
+  position: relative;
 }
 
 .reminder .note {
