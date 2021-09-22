@@ -3,6 +3,7 @@
 @import url(icons.css);
 @import url(side-bar.css);
 @import url(calendar.css);
+@import url(modal-meet.css);
 :root {
   font-family: 'Roboto', sans-serif;
   --white: #fffffe;

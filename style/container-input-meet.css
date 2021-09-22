@@ -1,0 +1,38 @@
+.containerInput-meet {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-block-end: 1.25rem;
+}
+
+.containerInput-meet i {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.input {
+  display: inline-block;
+  background: transparent;
+  block-size: 2.5rem;
+  inline-size: 100%;
+  border: none;
+  border-radius: 0.25rem;
+  outline: none;
+  font: var(--body1-regular);
+  color: black;
+  padding-inline: 1.2rem;
+  cursor: pointer;
+}
+
+.input.isGray {
+  background: var(--gray10);
+}
+
+.input.isBlue {
+  background: var(--blue10);
+  color: var(--white);
+}
+
+.input.isBlue::placeholder {
+  color: var(--white);
+}

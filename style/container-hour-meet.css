@@ -1,0 +1,60 @@
+.containerHour-meet {
+  display: grid;
+  margin-block: 1.25rem;
+  grid-template-columns: 2.5rem repeat(4, auto);
+  grid-template-rows: 1.75rem 1rem;
+  gap: .5rem;
+  grid-template-areas: "icon time startMeet guion meetEnd" "icon zh zh zh zh";
+}
+
+.containerHour-meet i {
+  grid-area: icon;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.containerHour-meet .dataMeet {
+  justify-content: start;
+  align-self: center;
+  grid-area: time;
+  font: var(--body1-regular);
+  color: var(--gray50);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: var(--gray10);
+}
+
+.containerHour-meet #hourStart {
+  grid-area: startMeet;
+  background: var(--gray10);
+  border: none;
+  border-radius: 0.25rem;
+  outline: none;
+  font: var(--body1-regular);
+  color: var(--gray50);
+  cursor: pointer;
+}
+
+.containerHour-meet span {
+  grid-area: guion;
+  place-self: center;
+}
+
+.containerHour-meet #hourEnd {
+  grid-area: meetEnd;
+  background: var(--gray10);
+  border: none;
+  border-radius: 0.25rem;
+  outline: none;
+  font: var(--body1-regular);
+  color: var(--gray50);
+  cursor: pointer;
+}
+
+.containerHour-meet p {
+  grid-area: zh;
+  margin: 0;
+  font: var(--body2-regular);
+  color: var(--gray20);
+}

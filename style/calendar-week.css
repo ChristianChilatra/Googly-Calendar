@@ -1,4 +1,3 @@
-@import url(grid-calendar-week.css);
 .calendarWeek {
   display: grid;
   grid-template-columns: 2.75rem repeat(7, 1fr);
@@ -8,7 +7,7 @@
   block-size: calc(100vh - 4.095rem);
 }
 
-.calendarWeek .day, .cellHour:nth-of-type(1) {
+.calendarWeek .day {
   text-decoration: none;
   position: sticky;
   inset-block-start: 0;
@@ -106,11 +105,13 @@
 
 .cellHour:nth-of-type(1) {
   grid-area: day;
-  display: flex;
-  align-items: flex-end;
+  background: var(--white);
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 1;
 }
 
 .cellHour:nth-of-type(1) span {
-  background: var(--white);
-  inset-block-start: 0.5rem;
+  inset-block-start: -.5rem;
+  inset-inline-start: -.1rem;
 }

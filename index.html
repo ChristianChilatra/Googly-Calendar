@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,6 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <title>Google Calendario</title>
 </head>
+
 <body>
   <header>
     <nav class="navHome">
@@ -32,17 +34,23 @@
           </button>
           <div class="buttonNav">
             <button class="buttonPrevious">
-              <i class="icon-icon-previous"></i>
+              <a class="prevDay" href="./calendar-by-day.html">
+                <i class="icon-icon-previous"></i>
+              </a>
             </button>
             <button class="buttonFollowing">
-              <i class="icon-icon-following"></i>
+              <a class="nextDay" href="./calendar-by-day.html">
+                <i class="icon-icon-following"></i>
+              </a>
             </button>
           </div>
           <button class="buttonCalendar isDate">
-            <h2>22 Abril 2021</h2>
+            <time datatime"2021-04-22">
+              <h2>22 Abril 2021</h2>
+            </time>
             <i class="icon-icon-down"></i>
           </button>
-          </div>
+        </div>
       </div>
       <div class="containerSecond">
         <select class="buttonCalendar" name="time" id="selectTime">
@@ -66,12 +74,18 @@
       </button>
       <div class="miniCalendar">
         <div class="month">
-          <h2>Abril 2021</h2>
+          <time datatime"2021-04-22">
+            <h2>Abril 2021</h2>
+          </time>
           <button class="buttonPrevious">
-            <i class="icon-icon-previous"></i>
+            <a class="prevDay" href="./calendar-by-day.html">
+              <i class="icon-icon-previous"></i>
+            </a>
           </button>
           <button class="buttonFollowing">
-            <i class="icon-icon-following"></i>
+            <a class="nextDay" href="./calendar-by-day.html">
+              <i class="icon-icon-following"></i>
+            </a>
           </button>
         </div>
         <div class="week">
@@ -84,94 +98,126 @@
           <span>S</span>
         </div>
         <div class="days">
-          <span>28</span>
-          <span>29</span>
-          <span>30</span>
-          <span>31</span>
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-          <span>4</span>
-          <span>5</span>
-          <span>6</span>
-          <span>7</span>
-          <span>8</span>
-          <span>9</span>
-          <span>10</span>
-          <span>11</span>
-          <span>12</span>
-          <span>13</span>
-          <span>14</span>
-          <span>15</span>
-          <span>16</span>
-          <span>17</span>
-          <span>18</span>
-          <span>19</span>
-          <span>20</span>
-          <span>21</span>
-          <span>22</span>
-          <span>23</span>
-          <span>24</span>
-          <span>25</span>
-          <span>26</span>
-          <span>27</span>
-          <span>28</span>
-          <span>29</span>
-          <span>30</span>
-          <span>1</span>
-          <span>2</span>
-          <span>3</span>
-          <span>4</span>
-          <span>5</span>
-          <span>6</span>
-          <span>7</span>
-          <span>8</span>
+          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>28</span></a>
+          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>29</span></a>
+          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>30</span></a>
+          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>31</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>1</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>2</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>3</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>4</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>5</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>6</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>7</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>8</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>9</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>10</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>11</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>12</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>13</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>14</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>15</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>16</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>17</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>18</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>19</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>20</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>21</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>22</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>23</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>24</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>25</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>26</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>27</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>28</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>29</span></a>
+          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>30</span></a>
+          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>1</span></a>
+          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>2</span></a>
+          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>3</span></a>
+          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>4</span></a>
+          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>5</span></a>
+          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>6</span></a>
+          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>7</span></a>
+          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>8</span></a>
         </div>
+      </div>
+      <div class="containerContact">
+        <i class="icon-Icon-users"></i>
+        <input type="text" name="searchContact" id="searchContact" placeholder="Buscar Personas">
+      </div>
+      <div class="myCalendar">
+        <details open>
+          <summary>Mis Calendarios</summary>
+          <div class="myCalendar-select">
+            <input type="checkbox" name="calendar_1" id="calendar_1">
+            <label for="calendar_1">Leonidas Esteban</label>
+          </div>
+          <div class="myCalendar-select">
+            <input type="checkbox" name="calendar_2" id="calendar_2">
+            <label for="calendar_2">Cumpleaños</label>
+          </div>
+          <div class="myCalendar-select">
+            <input type="checkbox" name="calendar_3" id="calendar_3">
+            <label for="calendar_3">Tareas</label>
+          </div>
+          <div class="myCalendar-select">
+            <input type="checkbox" name="calendar_4" id="calendar_4">
+            <label for="calendar_4">Recordatorios</label>
+          </div>
+        </details>
+
       </div>
     </div>
   </section>
   <main class="calendar">
     <div class="calendarWeek">
       <a tabindex="-1" class="day" href="./calendar-by-day.html">
-        <time datatime="19-09-2021">
+        <time datatime="2021-09-19">
           <h3 tabindex="0">DOM<P>18</P>
           </h3>
         </time>
         <span></span>
       </a>
       <a tabindex="-1" class="day" href="./calendar-by-day.html">
-        <time datatime="19-09-2021">
-          <h3 tabindex="0">LUN<P>19</P></h3>
+        <time datatime="2021-09-19">
+          <h3 tabindex="0">LUN<P>19</P>
+          </h3>
         </time>
         <span></span>
       </a>
       <a tabindex="-1" class="day" href="./calendar-by-day.html">
-        <time datatime="19-09-2021">
-          <h3 tabindex="0">MAR<P>20</P></h3>
+        <time datatime="2021-09-19">
+          <h3 tabindex="0">MAR<P>20</P>
+          </h3>
         </time>
         <span></span>
       </a>
       <a tabindex="-1" class="day" href="./calendar-by-day.html">
-        <time datatime="19-09-2021">
-          <h3 tabindex="0">MIÉ<P>21</P></h3>
+        <time datatime="2021-09-19">
+          <h3 tabindex="0">MIÉ<P>21</P>
+          </h3>
         </time>
         <span></span>
       </a>
       <a tabindex="-1" class="day" href="./calendar-by-day.html">
-        <time datatime="19-09-2021">
-          <h3 tabindex="0">JUE<P>22</P></h3>
+        <time datatime="2021-09-19">
+          <h3 tabindex="0">JUE<P>22</P>
+          </h3>
         </time>
         <span></span>
       </a>
       <a tabindex="-1" class="day" href="./calendar-by-day.html">
-        <time datatime="19-09-2021">
-          <h3 tabindex="0">VIE<P>23</P></h3>
+        <time datatime="2021-09-19">
+          <h3 tabindex="0">VIE<P>23</P>
+          </h3>
         </time>
         <span></span>
       </a>
       <a tabindex="-1" class="day" href="./calendar-by-day.html">
-        <time datatime="19-09-2021">
-          <h3 tabindex="0">SÁB<P>24</P></h3>
+        <time datatime="2021-09-19">
+          <h3 tabindex="0">SÁB<P>24</P>
+          </h3>
         </time>
         <span></span>
       </a>
@@ -787,5 +833,48 @@
       </div>
     </div>
   </main>
+  <dialog class="modalMeet">
+    <form action="">
+      <input class="titleMeet" type="text" name="title" id="title" placeholder="Nombra tu Reunion">
+      <div class="containerHour-meet">
+        <i class="icon-Icon-clock"></i>
+        <input required class="dataMeet" type="date" name="dataMeet" id="dataMeet">
+        <input required type="time" name="hourStart" id="hourStart">
+        <span>-</span>
+        <input required type="time" name="hourEnd" id="hourEnd">
+        <p>Zona horaria - No se repite</p>
+      </div>
+      <div class="containerInput-meet">
+        <i class="icon-Icon-users"></i>
+        <input class="input isGray" list="guests" type="text" name="searchContact" id="searchContact" placeholder="Buscar Personas">
+        <datalist id="guests">
+          <option value="Juan"></option>
+          <option value="Andres"></option>
+          <option value="Diego"></option>
+          <option value="Andrea"></option>
+          <option value="Daira"></option>
+        </datalist>
+      </div>
+      <div class="containerInput-meet">
+        <i class="icon-Icon-video"></i>
+        <input class="input isBlue" type="text" name="searchContact" id="searchContact"
+          placeholder="Agregar una videoconferencia de Google Meet">
+      </div>
+      <div class="containerInput-meet">
+        <i class="icon-Icon-gps"></i>
+        <input class="input isTrans" type="text" name="searchContact" id="searchContact"
+          placeholder="Agregar Ubicacion">
+      </div>
+      <div class="containerInput-meet">
+        <i class="icon-Icon-text"></i>
+        <textarea class="input isTrans" name="addDescription" id="addDescription" cols="30" rows="10" placeholder="Agregar descripción o archivo adjuntos"></textarea>
+      </div>
+      <div class="buttons">
+        <input class="buttonCalendar" type="button" value="Cancelar">
+        <input class="buttonCalendar isBlue" type="submit" value="Guardar">
+      </div>
+    </form>
+  </dialog>
 </body>
+<script src="js/app.js" type="module"></script>
 </html>
