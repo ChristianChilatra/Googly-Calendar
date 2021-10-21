@@ -29,10 +29,11 @@
 body {
   margin: 0;
   display: grid;
-  grid-template-columns: 15.25rem 1fr;
+  grid-template-columns: 15.25rem auto;
   grid-template-rows: 1fr auto;
-  grid-template-areas: "header header" "sidebar calendar";
+  grid-template-areas: "header header" "calendar calendar";
   block-size: 100vh;
+  overflow: hidden;
 }
 
 header {
@@ -42,9 +43,14 @@ header {
 
 .sideBar {
   grid-area: sidebar;
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: 4.095rem;
 }
 
 .calendar {
   grid-area: calendar;
-  margin: 0 1.5rem 0 1.5rem;
+  display: flex;
+  position: relative;
+  inset-inline-start: 0px;
 }

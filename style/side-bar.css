@@ -1,7 +1,9 @@
 @import url(mini-calendar.css);
 @import url(container-contact.css);
 @import url(my-calendar.css);
-.wrapperSide-bar {
+
+
+  .wrapperSide-bar {
   padding: 1.5rem;
   block-size: calc(100% - 4.095625rem);
 }
