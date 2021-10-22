@@ -1,7 +1,6 @@
 @import url(header.css);
 @import url(button.css);
 @import url(icons.css);
-@import url(side-bar.css);
 @import url(calendar.css);
 @import url(modal-meet.css);
 :root {
@@ -30,27 +29,8 @@ body {
   margin: 0;
   display: grid;
   grid-template-columns: 15.25rem auto;
-  grid-template-rows: 1fr auto;
+  grid-template-rows: 1fr 1000px;
   grid-template-areas: "header header" "calendar calendar";
   block-size: 100vh;
   overflow: hidden;
-}
-
-header {
-  grid-area: header;
-  border-block-end: 1px solid #F1F3F4;
-}
-
-.sideBar {
-  grid-area: sidebar;
-  position: absolute;
-  inset-inline-start: 0;
-  inset-block-start: 4.095rem;
-}
-
-.calendar {
-  grid-area: calendar;
-  display: flex;
-  position: relative;
-  inset-inline-start: 0px;
 }

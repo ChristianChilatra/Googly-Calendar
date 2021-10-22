@@ -1,63 +1,43 @@
 .miniCalendar {
-  margin-block-start: 1.5rem;
+  border: 1px solid red;
 }
 
 .miniCalendar .month {
-  display: grid;
-  grid-template-columns: repeat(7, 1.75rem);
-  grid-template-rows: 1.5rem;
-  grid-template-areas: "month month month . . prev foll"
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .miniCalendar h2 {
-  grid-area: month;
   font: var(--body1-medium);
   margin: 0;
-  white-space: nowrap;
-  align-self: center;
-}
-
-.miniCalendar button:nth-of-type(1) {
-  grid-area: prev;
-  place-self: center;
-}
-
-.miniCalendar button:nth-of-type(2) {
-  grid-area: foll;
-  place-self: center;
-}
-
-.miniCalendar span {
-  font: var(--body3-regular);
-  place-self: center;
 }
 
 .miniCalendar .week {
-  margin-block-start: 0.5rem;
+  font: var(--body3-regular);
   display: grid;
-  grid-template-columns: repeat(7, 1.75rem);
+  grid-template-columns: repeat(7, auto);
   grid-template-rows: 1.5rem;
+  border: 1px solid red;
+}
+
+.miniCalendar .week span {
+  place-self: center;
 }
 
 .miniCalendar .days {
   display: grid;
-  grid-template-columns: repeat(7, 1.75rem);
-  grid-template-rows: repeat(6, 1.75rem);
+  grid-template-columns: repeat(7, auto);
+  grid-template-rows: repeat(6, auto);
 }
 
 .miniCalendar .days .dayMini-calendar {
-  inline-size: 100%;
-  block-size: 100%;
   border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  place-self: center;
   cursor: pointer;
   text-decoration: none;
   color: black;
-}
-.miniCalendar .days .dayMini-calendar.isInactive {
-  color: var(--gray20);
 }
 
 .miniCalendar .days .dayMini-calendar:hover {

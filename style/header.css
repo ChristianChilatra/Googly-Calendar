@@ -1,9 +1,15 @@
 @import url(containerFirst.css);
 @import url(containerSecond.css);
+
+header {
+  grid-area: header;
+  border-block-end: 1px solid #F1F3F4;
+}
+
 .navHome {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  block-size: 100%;
+  block-size: auto;
   padding: 0 1.5rem;
 }

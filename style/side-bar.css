@@ -1,9 +1,19 @@
 @import url(mini-calendar.css);
 @import url(container-contact.css);
 @import url(my-calendar.css);
+.sideBar {
+  border: 1px solid red;
+  transition: all .5s;
+}
 
-
-  .wrapperSide-bar {
+.wrapperSideBar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   padding: 1.5rem;
-  block-size: calc(100% - 4.095625rem);
+}
+
+.buttonCalendar.isPlus{
+  position: relative;
+  z-index: 2;
 }

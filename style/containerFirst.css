@@ -3,7 +3,7 @@
 .containerFirst {
   display: flex;
   align-items: center;
-  inline-size: 32.8125rem;
+  inline-size: auto;
   gap: 3rem;
 
 }

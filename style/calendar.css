@@ -1,3 +1,11 @@
+@import url(side-bar.css);
 @import url(calendar-week.css);
 @import url(grid-calendar-week.css);
 
+.calendar {
+  grid-area: calendar;
+  display: flex;
+  position: relative;
+  inset-inline-start: 0px;
+  block-size: auto;
+}

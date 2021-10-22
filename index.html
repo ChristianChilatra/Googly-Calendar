@@ -44,12 +44,11 @@
               </a>
             </button>
           </div>
-          <button class="buttonCalendar isDate">
-            <time datatime"2021-04-22">
+          <div class="buttonCalendar isDate">
+            <time>
               <h2>22 Abril 2021</h2>
             </time>
-            <i class="icon-icon-down"></i>
-          </button>
+          </div>
         </div>
       </div>
       <div class="containerSecond">
@@ -66,772 +65,70 @@
     </nav>
     <main></main>
   </header>
-  <section class="sideBar">
-    <div class="wrapperSide-bar">
-      <button class="buttonCalendar isPlus">
-        <i class="icon-Icon-plus"></i>
-        <p>Crear</p>
-      </button>
-      <div class="miniCalendar">
-        <div class="month">
-          <time datatime"2021-04-22">
-            <h2>Abril 2021</h2>
-          </time>
-          <button class="buttonPrevious">
-            <a class="prevDay" href="./calendar-by-day.html">
-              <i class="icon-icon-previous"></i>
-            </a>
-          </button>
-          <button class="buttonFollowing">
-            <a class="nextDay" href="./calendar-by-day.html">
-              <i class="icon-icon-following"></i>
-            </a>
-          </button>
-        </div>
-        <div class="week">
-          <span>D</span>
-          <span>L</span>
-          <span>M</span>
-          <span>X</span>
-          <span>J</span>
-          <span>V</span>
-          <span>S</span>
-        </div>
-        <div class="days">
-          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>28</span></a>
-          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>29</span></a>
-          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>30</span></a>
-          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>31</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>1</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>2</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>3</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>4</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>5</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>6</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>7</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>8</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>9</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>10</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>11</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>12</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>13</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>14</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>15</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>16</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>17</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>18</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>19</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>20</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>21</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>22</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>23</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>24</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>25</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>26</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>27</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>28</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>29</span></a>
-          <a class="dayMini-calendar" href="./calendar-by-day.html"><span>30</span></a>
-          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>1</span></a>
-          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>2</span></a>
-          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>3</span></a>
-          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>4</span></a>
-          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>5</span></a>
-          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>6</span></a>
-          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>7</span></a>
-          <a class="dayMini-calendar isInactive" href="./calendar-by-day.html"><span>8</span></a>
-        </div>
-      </div>
-      <div class="containerContact">
-        <i class="icon-Icon-users"></i>
-        <input type="text" name="searchContact" id="searchContact" placeholder="Buscar Personas">
-      </div>
-      <div class="myCalendar">
-        <details open>
-          <summary>Mis Calendarios</summary>
-          <div class="myCalendar-select">
-            <input type="checkbox" name="calendar_1" id="calendar_1">
-            <label for="calendar_1">Leonidas Esteban</label>
-          </div>
-          <div class="myCalendar-select">
-            <input type="checkbox" name="calendar_2" id="calendar_2">
-            <label for="calendar_2">Cumpleaños</label>
-          </div>
-          <div class="myCalendar-select">
-            <input type="checkbox" name="calendar_3" id="calendar_3">
-            <label for="calendar_3">Tareas</label>
-          </div>
-          <div class="myCalendar-select">
-            <input type="checkbox" name="calendar_4" id="calendar_4">
-            <label for="calendar_4">Recordatorios</label>
-          </div>
-        </details>
-
-      </div>
-    </div>
-  </section>
   <main class="calendar">
-    <div class="calendarWeek">
-      <a tabindex="-1" class="day" href="./calendar-by-day.html">
-        <time datatime="2021-09-19">
-          <h3 tabindex="0">DOM<P>18</P>
-          </h3>
-        </time>
-        <span></span>
-      </a>
-      <a tabindex="-1" class="day" href="./calendar-by-day.html">
-        <time datatime="2021-09-19">
-          <h3 tabindex="0">LUN<P>19</P>
-          </h3>
-        </time>
-        <span></span>
-      </a>
-      <a tabindex="-1" class="day" href="./calendar-by-day.html">
-        <time datatime="2021-09-19">
-          <h3 tabindex="0">MAR<P>20</P>
-          </h3>
-        </time>
-        <span></span>
-      </a>
-      <a tabindex="-1" class="day" href="./calendar-by-day.html">
-        <time datatime="2021-09-19">
-          <h3 tabindex="0">MIÉ<P>21</P>
-          </h3>
-        </time>
-        <span></span>
-      </a>
-      <a tabindex="-1" class="day" href="./calendar-by-day.html">
-        <time datatime="2021-09-19">
-          <h3 tabindex="0">JUE<P>22</P>
-          </h3>
-        </time>
-        <span></span>
-      </a>
-      <a tabindex="-1" class="day" href="./calendar-by-day.html">
-        <time datatime="2021-09-19">
-          <h3 tabindex="0">VIE<P>23</P>
-          </h3>
-        </time>
-        <span></span>
-      </a>
-      <a tabindex="-1" class="day" href="./calendar-by-day.html">
-        <time datatime="2021-09-19">
-          <h3 tabindex="0">SÁB<P>24</P>
-          </h3>
-        </time>
-        <span></span>
-      </a>
-
-      <div class="cellHour">
-        <span>GMT-05</span>
-        <div></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="01:00">01:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="02:00">02:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="03:00">03:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="04:00">04:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="05:00">05:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="06:00">06:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="07:00">07:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div tabindex="0" class="noteAdd" aria-label="de 17:00 a 18:30 hacer ejercicio">
-          <p>Hacer Ejercicio</p>
-          <p><time datatime="17:00">5:00</time> - <time datatime="18:30">6:30</time></p>
+    <section class="sideBar">
+      <div class="wrapperSideBar">
+        <button class="buttonCalendar isPlus">
+          <i class="icon-Icon-plus"></i>
+          <p>Crear</p>
+        </button>
+        <div class="miniCalendar">
+          <div class="month">
+            <time datatime"2021-04-22">
+              <h2>Abril 2021</h2>
+            </time>
+            <div>
+              <button class="buttonPrevious">
+                <a class="prevDay" href="./calendar-by-day.html">
+                  <i class="icon-icon-previous"></i>
+                </a>
+              </button>
+              <button class="buttonFollowing">
+                <a class="nextDay" href="./calendar-by-day.html">
+                  <i class="icon-icon-following"></i>
+                </a>
+              </button>
+            </div>
+          </div>
+          <div class="week">
+            <span>D</span>
+            <span>L</span>
+            <span>M</span>
+            <span>X</span>
+            <span>J</span>
+            <span>V</span>
+            <span>S</span>
+          </div>
+          <div class="days">
+          </div>
+        </div>
+        <div class="containerContact">
+          <i class="icon-Icon-users"></i>
+          <input type="text" name="searchContact" id="searchContact" placeholder="Buscar Personas">
+        </div>
+        <div class="myCalendar">
+          <details open>
+            <summary>Mis Calendarios</summary>
+            <div class="myCalendar-select">
+              <input type="checkbox" name="calendar_1" id="calendar_1">
+              <label for="calendar_1">Leonidas Esteban</label>
+            </div>
+            <div class="myCalendar-select">
+              <input type="checkbox" name="calendar_2" id="calendar_2">
+              <label for="calendar_2">Cumpleaños</label>
+            </div>
+            <div class="myCalendar-select">
+              <input type="checkbox" name="calendar_3" id="calendar_3">
+              <label for="calendar_3">Tareas</label>
+            </div>
+            <div class="myCalendar-select">
+              <input type="checkbox" name="calendar_4" id="calendar_4">
+              <label for="calendar_4">Recordatorios</label>
+            </div>
+          </details>
         </div>
       </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="08:00">08:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="09:00">09:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="10:00">10:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div tabindex="0" class="noteAdd" aria-label="de 17:00 a 18:30 hacer ejercicio">
-          <p>Hacer Ejercicio</p>
-          <p><time datatime="17:00">5:00</time> - <time datatime="18:30">6:30</time></p>
-        </div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="11:00">11:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="12:00">12:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="13:00">13:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="14:00">14:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="15:00">15:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="16:00">16:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="17:00">17:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="18:00">18:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="19:00">19:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="20:00">20:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="21:00">21:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="22:00">22:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <span><time datatime="23:00">23:00</time></span>
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="cellHour">
-        <div></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-      <div class="reminder">
-        <div class="note"></div>
-      </div>
-    </div>
+    </section>
   </main>
   <dialog class="modalMeet">
     <form action="">
@@ -846,7 +143,8 @@
       </div>
       <div class="containerInput-meet">
         <i class="icon-Icon-users"></i>
-        <input class="input isGray" list="guests" type="text" name="searchContact" id="searchContact" placeholder="Buscar Personas">
+        <input class="input isGray" list="guests" type="text" name="searchContact" id="searchContact"
+          placeholder="Buscar Personas">
         <datalist id="guests">
           <option value="Juan"></option>
           <option value="Andres"></option>
@@ -867,7 +165,8 @@
       </div>
       <div class="containerInput-meet">
         <i class="icon-Icon-text"></i>
-        <textarea class="input isTrans" name="addDescription" id="addDescription" cols="30" rows="10" placeholder="Agregar descripción o archivo adjuntos"></textarea>
+        <textarea class="input isTrans" name="addDescription" id="addDescription" cols="30" rows="10"
+          placeholder="Agregar descripción o archivo adjuntos"></textarea>
       </div>
       <div class="buttons">
         <input class="buttonCalendar" type="button" value="Cancelar">
@@ -876,5 +175,6 @@
     </form>
   </dialog>
 </body>
-<script src="js/app.js" type="module"></script>
+<script src="js/index.js" type="module"></script>
+
 </html>
