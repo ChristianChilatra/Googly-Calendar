@@ -1,16 +1,18 @@
 
 
 const statusSideBar = {
-  open: true
+  open: false
 }
 
 const $buttonSideBar = document.querySelector(".iconSidebar")
 const $sideBar = document.querySelector(".sideBar")
 const $widthSideBar = $sideBar.getBoundingClientRect().width
 const $buttonPlus = document.querySelector(".buttonCalendar.isPlus")
-const $buttonPlusStyle = window.getComputedStyle($buttonPlus)
 
 export default function showSideBar(){
+
+  statusSideBar.open ? open($widthSideBar) : close(0)
+
 
   $buttonSideBar.addEventListener("click", widthSidebar)
 
