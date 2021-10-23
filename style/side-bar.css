@@ -2,7 +2,6 @@
 @import url(container-contact.css);
 @import url(my-calendar.css);
 .sideBar {
-  border: 1px solid red;
   transition: all .5s;
 }
 
