@@ -3,6 +3,20 @@
 @import url(my-calendar.css);
 .sideBar {
   transition: all .5s;
+  overflow-y: scroll;
+}
+
+.sideBar:hover.sideBar::-webkit-scrollbar-thumb {
+  background: #c4c7c9;
+}
+
+.sideBar::-webkit-scrollbar {
+  inline-size: .4rem;
+}
+
+.sideBar::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 1rem;
 }
 
 .wrapperSideBar {
@@ -13,7 +27,7 @@
   white-space: nowrap;
 }
 
-.buttonCalendar.isPlus{
+.buttonCalendar.isPlus {
   position: relative;
   z-index: 2;
 }

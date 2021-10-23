@@ -4,8 +4,6 @@
   grid-template-rows: 5.375rem repeat(24, minmax(2.5rem, auto));
   grid-template-areas: "day dom lun mar mie jue vie sab";
   overflow-y: scroll;
-  block-size: calc(100vh - 4.095rem);
-  inline-size: 100%;
 }
 
 .currentTime {

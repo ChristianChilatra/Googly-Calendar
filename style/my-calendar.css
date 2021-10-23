@@ -1,5 +1,6 @@
 .myCalendar {
-  border: 1px solid red;
+  --img-row-rotate: rotate(180deg);
+  --statusCheck: url(../icon/Icon-checkVoid.svg);
 }
 
 .myCalendar details summary {
@@ -8,11 +9,16 @@
   margin: 0 0 1rem 0;
   cursor: pointer;
   user-select: none;
-}
-
-.myCalendar details summary {
   list-style: none;
   position: relative;
+}
+
+.myCalendar details summary::after {
+  content: url(../icon/icon-up.svg);
+  position: absolute;
+  inset-inline-end: 0;
+  transform: var(--img-row-rotate);
+  transition: all 0.4s ease;
 }
 
 .myCalendar-select {
@@ -20,7 +26,23 @@
   gap: 0.25rem;
   position: relative;
   margin: .5rem 0 0.75rem 0;
-  border: 1px solid red;
+}
+
+.myCalendar-select input[type="checkbox"] {
+  visibility: hidden;
+}
+
+.myCalendar-select input::before {
+  content: url(../icon/Icon-checkVoid.svg);
+  visibility: visible;
+  position: absolute;
+  inset-block-start: -.1rem;
+  inset-inline-start: -.1rem;
+  cursor: pointer;
+}
+
+.myCalendar-select input:checked::before {
+  content: url(../icon/icon-check.svg);
 }
 
 .myCalendar-select:nth-of-type(4) {

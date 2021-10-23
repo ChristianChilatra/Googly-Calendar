@@ -1,5 +1,4 @@
-.miniCalendar {
-}
+.miniCalendar {}
 
 .miniCalendar .month {
   display: flex;
@@ -16,7 +15,7 @@
 .miniCalendar .week {
   font: var(--body3-regular);
   display: grid;
-  grid-template-columns: repeat(7, auto);
+  grid-template-columns: repeat(7, 1.86rem);
   grid-template-rows: 1.5rem;
 }
 

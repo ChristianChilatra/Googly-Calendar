@@ -6,13 +6,13 @@ import { createDOM } from "./utils/dom.js"
 
 const $sideBar = document.querySelector(".sideBar")//---// DOM Side Bar //---//
 const $miniCalendar = $sideBar.querySelector(".days") //---// DOM Dias Calendario //---//
-//---// la variables "monthCurrent" no permitira ejecutar consulta y
+//---// la variables "monthCurrent" nos permitira ejecutar consulta y
 //visualizacion del mes deseado con datos formateados //---//
 let monthCurrent = getMonth()
 
 
 //-------------------// Configuracion MIni Calendar //-------------------//
-export function configMiniCalendar() {
+export function configMiniCalendar($sideBar) {
 
   //---// numero dias del mes actual//---//
   const monthAmount = getMonthAmount(monthCurrent)
@@ -90,7 +90,7 @@ function setDaysCalendar(monthAmount) {
   return calendarAmount
 }
 
-  //---// Agrega Dias al Mini Calendar //---//
+//---// Agrega Dias al Mini Calendar //---//
 
 function setDaysDom(calendarAmount, $miniCalendar) {
 
@@ -101,7 +101,7 @@ function setDaysDom(calendarAmount, $miniCalendar) {
   })
 }
 
-  //---// Agrega estilo a NO dias del mes actual //---//
+//---// Agrega estilo a NO dias del mes actual //---//
 
 function setDayStyle($miniCalendar, calendarAmount, monthAmount) {
   const $daysMiniCalendar = $miniCalendar.querySelectorAll(".dayMini-calendar")
