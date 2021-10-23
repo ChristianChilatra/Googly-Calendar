@@ -1,7 +1,7 @@
-
+import {configSideBar} from "./configSideBar.js";
 
 const statusSideBar = {
-  open: false
+  open: true
 }
 
 const $buttonSideBar = document.querySelector(".iconSidebar")
@@ -16,7 +16,7 @@ export default function showSideBar(){
 
   $buttonSideBar.addEventListener("click", widthSidebar)
 
-  console.log()
+  configSideBar()
 
   function widthSidebar(){
     if (statusSideBar.open){
@@ -43,12 +43,10 @@ export default function showSideBar(){
 
   function visualButtomOpen(){
     $buttonPlus.style.cssText = `border-radius: $buttonPlusStyle.borderRadius; inline-size: $buttonPlusStyle.inlineSize`
-    $buttonPlus.querySelector("i").style.cssText = "margin-inline-end: $buttonPlusStyle.marginInlineEnd"
     $buttonPlus.querySelector("p").style.display = "block"
   }
   function visualButtomClose(){
     $buttonPlus.style.cssText = "border-radius: 50%; inline-size: 2rem"
-    $buttonPlus.querySelector("i").style.marginInlineEnd = "0px"
     $buttonPlus.querySelector("p").style.display = "none"
   }
 }

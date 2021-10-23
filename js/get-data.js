@@ -1,10 +1,35 @@
-import { getDateTime } from "./services/data-time.js"
-import { getDateTimeNumber} from "./services/data-time.js"
+import { getDateMonth, getDateMonthAmount, getDateTimeFormat, getDateTimeNumberFormat, getDateMonthFormat} from "./services/data-time.js"
 
 
-export function setDatTime(){
-  return getDateTime()
+export function getMonth() {
+  return getDateMonth()
 }
-export function setDatTimeNumber(){
-  return getDateTimeNumber()
+
+export function getMonthAmount(value) {
+  return getDateMonthAmount(value)
+}
+
+export function getTimeFormat(){
+  const configTime = {
+    day: "numeric",    //Se establece formato de funcion Intl.DateTimeFormat
+    month: "long",
+    year: "numeric"
+  }
+  return getDateTimeFormat(configTime)
+}
+export function getTimeNumberFormat(){
+  const configTime = {
+    day: "numeric",    //Se establece formato de funcion Intl.DateTimeFormat
+    month: "numeric",
+    year: "numeric"
+  }
+  return getDateTimeNumberFormat(configTime)
+}
+export function getMonthFormat(monthCurrent){
+  const configTime = {
+    day: "numeric",    //Se establece formato de funcion Intl.DateTimeFormat
+    month: "long",
+    year: "numeric"
+  }
+  return getDateMonthFormat(configTime, monthCurrent)
 }

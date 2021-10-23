@@ -46,11 +46,11 @@
   inline-size: 5.5rem;
   box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.2);
   transition: all .1s;
+  gap: .5rem;
 }
 
 .buttonCalendar.isPlus i {
   color: black;
-  margin-inline-end: 0.5rem;
 }
 
 .buttonCalendar.isPlus>* {

@@ -28,16 +28,19 @@
 
 .miniCalendar .days {
   display: grid;
-  grid-template-columns: repeat(7, auto);
-  grid-template-rows: repeat(6, auto);
+  grid-template-columns: repeat(7, 1.86rem);
+  grid-template-rows: repeat(6, 1.86rem);
+  font: var(--body3-medium);
 }
 
 .miniCalendar .days .dayMini-calendar {
   border-radius: 50%;
-  place-self: center;
   cursor: pointer;
   text-decoration: none;
   color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .miniCalendar .days .dayMini-calendar:hover {
