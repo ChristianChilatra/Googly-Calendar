@@ -1,5 +1,9 @@
-import { getDateMonth, getDateMonthAmount, getDateTimeFormat, getDateTimeNumberFormat, getDateMonthFormat} from "./services/data-time.js"
+import { getDateDay, getDateMonth, getDateMonthAmount, getDateTimeFormat, getDateTimeNumberFormat, getDateMonthFormat} from "./services/data-time.js"
 
+
+export function getDay() {
+  return getDateDay()
+}
 
 export function getMonth() {
   return getDateMonth()

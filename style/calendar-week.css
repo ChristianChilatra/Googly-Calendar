@@ -1,63 +1,30 @@
 .calendarWeek {
+  flex: 1;
+}
+
+.calendarWeek .containerDays {
   display: grid;
-  grid-template-columns: 2.75rem repeat(7, 1fr);
-  grid-template-rows: 5.375rem repeat(24, minmax(2.5rem, auto));
-  grid-template-areas: "day dom lun mar mie jue vie sab";
-  overflow-y: scroll;
+  grid-template-columns: 3.75rem repeat(7, 1fr);
+  grid-template-areas: ". DOM LUN MAR MIE JUE VIE SAB";
 }
 
-.currentTime {
-  inline-size: 100%;
-  block-size: 2px;
-  background: red;
-  position: absolute;
-  z-index: 2;
-}
-.currentTime::before{
-  content: "";
-  display: block;
-  inline-size: .5rem;
-  block-size: .5rem;
-  background: red;
-  position: relative;
-  border-radius: 50%;
-  inset-block-start: -.19rem;
-  inset-inline-start: -.3rem;
+.calendarWeek .containerDays .day {
+  padding: 0;
+  border: none;
+  background: transparent;
 }
 
-.calendarWeek .day {
-  text-decoration: none;
-  position: sticky;
-  inset-block-start: 0;
-  inline-size: 100%;
-  block-size: 100%;
-  background: var(--white);
-  display: grid;
-  grid-template-rows: auto 1fr;
-  z-index: 1;
-}
-
-.calendarWeek .day span {
-  border: 1px solid #c3c8cc;
-  border-block-start: none;
-  border-inline-end: none;
-}
-
-.calendarWeek .day h3 {
+.calendarWeek .containerDays .day h3 {
   font: var(--body1-medium);
   color: var(--gray20);
-  margin: 0;
-  position: relative;
-  inset-block-start: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: 1.5rem auto 0 auto;
 }
 
-.calendarWeek .day h3 p {
+.calendarWeek .containerDays .day p {
   font: var(--subtitle-subtitle1);
-  color: black;
-  margin: 0;
+  color: var(--gray20);
+  margin: auto;
+  cursor: pointer;
   inline-size: 2.75rem;
   block-size: 2.75rem;
   display: flex;
@@ -66,70 +33,6 @@
   border-radius: 50%;
 }
 
-.calendarWeek .day h3 p:hover, .calendarWeek .day h3:focus p {
+.calendarWeek .containerDays .day p:hover {
   background: var(--gray10);
-}
-
-.calendarWeek a:nth-child(1) {
-  grid-area: dom;
-}
-
-.calendarWeek a:nth-child(2) {
-  grid-area: lun;
-}
-
-.calendarWeek a:nth-child(3) {
-  grid-area: mar;
-}
-
-.calendarWeek a:nth-child(4) {
-  grid-area: mie;
-}
-
-.calendarWeek a:nth-child(5) {
-  grid-area: jue;
-}
-
-.calendarWeek a:nth-child(6) {
-  grid-area: vie;
-}
-
-.calendarWeek a:nth-child(7) {
-  grid-area: sab;
-}
-
-.cellHour {
-  font: var(--body3-regular);
-  color: var(--gray20);
-  display: grid;
-  grid-template-columns: 5fr 1fr;
-}
-
-.cellHour span {
-  position: relative;
-  inset-block-start: 0.2rem;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-/* Div contenedor de linea extra en el grid */
-
-.cellHour div {
-  border-block-end: 1px solid #c3c8cc;
-}
-
-/*-------------------------------------------*/
-
-.cellHour:nth-of-type(1) {
-  grid-area: day;
-  background: var(--white);
-  position: sticky;
-  inset-block-start: 0;
-  z-index: 1;
-}
-
-.cellHour:nth-of-type(1) span {
-  inset-block-start: -.5rem;
-  inset-inline-start: -.1rem;
 }

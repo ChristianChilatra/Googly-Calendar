@@ -4,12 +4,14 @@
 header {
   grid-area: header;
   border-block-end: 1px solid #F1F3F4;
+  block-size: 4rem;
+  display: flex;
 }
 
 .navHome {
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  block-size: auto;
   padding: 0 1.5rem;
 }

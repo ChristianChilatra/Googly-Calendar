@@ -2,7 +2,7 @@ import {configMiniCalendar} from "./config-mini-calendar.js";
 import {configMyCalendar} from "./config-my-calendar.js";
 
 const statusSideBar = {
-  open: true
+  open: false
 }
 
 const $buttonSideBar = document.querySelector(".iconSidebar")

@@ -9,6 +9,9 @@ function setFormatTime(configTime, configDate = date) {
 }
 
 
+export function getDateDay() {
+  return date.getDay()
+}
 export function getDateMonth() {
   return date.getMonth()
 }
@@ -26,9 +29,6 @@ export function getDateMonthFormat(configTime, monthCurrent) {
   formatDate = formatDate.replace(formatDate[0], formatDate[0].toUpperCase())
 
   return formatDate
-}
-export function getDateDay() {
-  return date.getDay()
 }
 export function getDateTimeFormat(configTime) {
   const formatDate = setFormatTime(configTime).split("de")

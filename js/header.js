@@ -1,5 +1,5 @@
-import { getTimeFormat, getTimeNumberFormat} from "./get-data.js"
-
+import { getTimeFormat    ,   getTimeNumberFormat} from "./get-data.js"
+      //dia Mes año//      //año/mes/dia//
 
 const $header = document.querySelector("header")
 
@@ -9,6 +9,5 @@ export default function showDateHeader(){
 
   $markerTime.setAttribute("datatime", getTimeNumberFormat())
   $markerTime.querySelector("h2").textContent = getTimeFormat()
-
 
 }

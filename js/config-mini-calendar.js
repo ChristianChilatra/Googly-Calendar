@@ -1,11 +1,12 @@
 import { getTimeNumberFormat, getMonthFormat, getMonthAmount, getMonth } from "./get-data.js"
 import { createDOM } from "./utils/dom.js"
+import { formatCurrentMonth } from "./utils/format-data.js"
 
 //---// Mini Calendar //---//
 //-------------------// Variables iniciales DOM //-------------------//
 
 const $sideBar = document.querySelector(".sideBar")//---// DOM Side Bar //---//
-const $miniCalendar = $sideBar.querySelector(".days") //---// DOM Dias Calendario //---//
+const $miniCalendar = $sideBar.querySelector(".days") //---// DOM Container Dias Calendario //---//
 //---// la variables "monthCurrent" nos permitira ejecutar consulta y
 //visualizacion del mes deseado con datos formateados //---//
 let monthCurrent = getMonth()
@@ -22,7 +23,7 @@ export function configMiniCalendar($sideBar) {
 
   //---// Calendario + Dias del Mes Anterior + Dias del Mes Siguiente //---//
 
-  const calendarAmount = setDaysCalendar(monthAmount) //---//Almacena los dias segun mes
+  const calendarAmount = formatCurrentMonth(monthCurrent, monthAmount) //---//Almacena los dias segun mes
 
   //---// Agrega Dias al Mini Calendar //---//
 
@@ -61,33 +62,6 @@ function setMonthCalendar() {
 
   $monthTime.setAttribute("datatime", getTimeNumberFormat())
   $monthTime.querySelector("h2").textContent = getMonthFormat(monthCurrent)
-}
-
-//---// Calendario + Dias del Mes Anterior + Dias del Mes Siguiente //---//
-
-function setDaysCalendar(monthAmount) {
-
-  const calendarAmount = []
-
-  for (let index = 1; index < monthAmount + 1; index++) { //---// Agrega Dias del Mes Actual //---//
-    calendarAmount.push(index)
-  }
-
-  let numberLast = getMonthAmount(monthCurrent - 1)
-  let numberNext = 1
-
-  while (calendarAmount.length < 42) { //---// Agrega al array los dias del mes anterior
-    if (calendarAmount.length < 42) {       // + dias del sigueinte mes //---//
-      calendarAmount.unshift(numberLast)
-      numberLast--
-    } else { break }
-    if (calendarAmount.length < 42) {
-      calendarAmount.push(numberNext)
-      numberNext++
-    } else { break }
-  }
-
-  return calendarAmount
 }
 
 //---// Agrega Dias al Mini Calendar //---//

@@ -28,8 +28,8 @@
 body {
   margin: 0;
   display: grid;
-  grid-template-columns: 15.25rem auto;
-  grid-template-rows: 1fr 1000px;
+  grid-template-columns: auto auto;
+  grid-template-rows: 1fr auto;
   grid-template-areas: "header header" "calendar calendar";
   block-size: 100vh;
   overflow: hidden;

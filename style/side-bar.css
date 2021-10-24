@@ -2,7 +2,7 @@
 @import url(container-contact.css);
 @import url(my-calendar.css);
 .sideBar {
-  transition: all .5s;
+  transition: inline-size .3s;
   overflow-y: scroll;
 }
 
