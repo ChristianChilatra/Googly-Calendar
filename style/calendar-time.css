@@ -1,9 +1,28 @@
 .containerTime {
-  border: 1px solid red;
+  padding-inline-end: 1rem;
   inline-size: auto;
   block-size: 100%;
-  background: var(--gray10);
   display: grid;
   grid-template-columns: 3.75rem repeat(7, 1fr);
-  grid-template-rows: 1.5rem repeat(24, minmax(6rem, 1fr));
+  grid-template-rows: repeat(24, minmax(4rem, 1fr));
+}
+
+.hour{
+  position: relative;
+}
+
+.hour hr{
+  margin: 0;
+  border: 0;
+  inline-size: 1rem;
+  block-size: 1px;
+  background: var(--gray20);
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-end: 0;
+}
+
+.containerTask{
+  border-inline-start: 1px solid var(--gray20);
+  border-block-end: 1px solid var(--gray20);
 }
