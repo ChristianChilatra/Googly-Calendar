@@ -1,6 +1,6 @@
 @import url(side-bar.css);
 @import url(calendar-week.css);
-@import url(grid-calendar-week.css);
+@import url(calendar-time.css);
 
 .calendar {
   grid-area: calendar;

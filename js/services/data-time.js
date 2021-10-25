@@ -31,8 +31,12 @@ export function getDateMonthFormat(configTime, monthCurrent) {
   return formatDate
 }
 export function getDateTimeFormat(configTime) {
-  const formatDate = setFormatTime(configTime).split("de")
-  return formatDate.join("")
+  let formatDate = setFormatTime(configTime).split(" ")
+  formatDate.shift()
+  formatDate.shift()
+  formatDate = formatDate.join(" ")
+  formatDate = formatDate.replace(formatDate[0], formatDate[0].toUpperCase())
+  return formatDate
 }
 export function getDateTimeNumberFormat(configTime) {
   const formatDate = setFormatTime(configTime).split("/").reverse()

@@ -1,0 +1,9 @@
+.containerTime {
+  border: 1px solid red;
+  inline-size: auto;
+  block-size: 100%;
+  background: var(--gray10);
+  display: grid;
+  grid-template-columns: 3.75rem repeat(7, 1fr);
+  grid-template-rows: 1.5rem repeat(24, minmax(6rem, 1fr));
+}

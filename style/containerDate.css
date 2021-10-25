@@ -29,11 +29,6 @@
   inline-size: 2rem;
   border-radius: 50%;
 }
-.buttonPrevious a, .buttonFollowing a{
-  text-decoration: none;
-  color: black;
-}
-
 
 .buttonPrevious:active, .buttonFollowing:active{
   transform: scale(.89);

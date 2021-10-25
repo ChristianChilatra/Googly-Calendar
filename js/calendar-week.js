@@ -1,12 +1,14 @@
 import { getDay, getMonth, getTimeNumberFormat, getMonthAmount } from "./get-data.js";
-import { formatCurrentMonth, formatCurrentWeek } from "./utils/format-data.js"
+import { formatCurrentMonth, formatCurrentWeek, formatCurrentWeekJust } from "./utils/format-data.js"
 import { createDOM } from "./utils/dom.js"
 import {weekDaysList} from "./utils/dictionary.js"
 
-const monthCurrent = getMonth()
-const currentDay = parseInt(getTimeNumberFormat().split("-")[2])
+let monthCurrent = getMonth()
+let currentDay = parseInt(getTimeNumberFormat().split("-")[2])
 const monthAmount = getMonthAmount(monthCurrent)
 const $weekDays = document.querySelector(".containerDays")
+
+showWeekDiff()
 
 export default function showCalendarWeek() {
 
@@ -14,7 +16,9 @@ export default function showCalendarWeek() {
   const weekDays = formatCurrentWeek(monthDays)
   let weekCurrent = 0
 
-  weekDays.forEach((element, index) => {
+  const newArrayWeekDays = formatCurrentWeekJust(weekDays, monthAmount)
+
+  newArrayWeekDays.forEach((element, index) => {
     if (element === 0){
       if (element.indexOf(currentDay, 5) != -1) {
         weekCurrent = index
@@ -39,11 +43,38 @@ function setDaysDom(weekDays, $weekDays, weekCurrent, currentDay) {
           <p>${element}</p>
         </button>
     `))
-    if (index === getDay()){
+    if (index === getDay() && currentDay === parseInt(getTimeNumberFormat().split("-")[2])){
       const $currentDayDOM = $weekDays.querySelector(`#day_${index}`)
       $currentDayDOM.querySelector("p").style.background = "var(--blue10)"
       $currentDayDOM.querySelector("p").style.color = "var(--white)"
       $currentDayDOM.querySelector("h3").style.color = "var(--blue10)"
     }
   })
+}
+
+function showWeekDiff(){
+  const $evenButtonLastWeek = document.querySelector(".buttonPrevious")
+  const $evenButtonNextWeek = document.querySelector(".buttonFollowing")
+
+  $evenButtonLastWeek.addEventListener('click',showWeekLast)
+  $evenButtonNextWeek.addEventListener('click', showWeekNext);
+}
+
+function showWeekLast(){
+  if (Math.sign(currentDay - 7) === 1 ){
+    currentDay = currentDay - 7
+    console.log("Dia: " +currentDay);
+    $weekDays.innerHTML = ""
+    showCalendarWeek()
+  }
+
+}
+function showWeekNext(){
+  if ((currentDay + 7) <= monthAmount) {
+    currentDay += 7
+    console.log("Dia: " +currentDay);
+    $weekDays.innerHTML = ""
+    showCalendarWeek()
+  }
+
 }

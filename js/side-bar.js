@@ -5,6 +5,8 @@ const statusSideBar = {
   open: false
 }
 
+//----------//Estado Inicial y SideBar Dropdown//----------//
+
 const $buttonSideBar = document.querySelector(".iconSidebar")
 const $sideBar = document.querySelector(".sideBar")
 const $header = document.querySelector("header")

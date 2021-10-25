@@ -39,3 +39,22 @@ export function formatCurrentWeek(currentMonthDays){
   return newArray
 
 }
+
+export function formatCurrentWeekJust(weekDays, monthAmount){
+
+  let newArrayWeekDays = weekDays
+
+  const numberIteratorInitial = newArrayWeekDays[0].indexOf(1)
+  const numberIteratorFinish = newArrayWeekDays[newArrayWeekDays.length - 1].indexOf(monthAmount)
+
+
+  for (let index = 0; index < numberIteratorInitial; index++) {
+    newArrayWeekDays[0].shift()
+  }
+
+  for (let index = newArrayWeekDays[newArrayWeekDays.length - 1].length - 1; index > numberIteratorFinish; index--) {
+    newArrayWeekDays[newArrayWeekDays.length - 1].pop()
+  }
+
+  return newArrayWeekDays
+}
