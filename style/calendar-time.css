@@ -1,10 +1,11 @@
 .containerTime {
   padding-inline-end: 1rem;
   inline-size: auto;
-  block-size: 100%;
+  block-size: auto;
   display: grid;
   grid-template-columns: 3.75rem repeat(7, 1fr);
-  grid-template-rows: repeat(24, minmax(4rem, 1fr));
+  grid-template-rows: repeat(24, 4rem);
+  border: 1px solid red;
 }
 
 .hour{

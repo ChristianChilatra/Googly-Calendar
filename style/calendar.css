@@ -7,5 +7,6 @@
   display: flex;
   position: relative;
   inset-inline-start: 0px;
-  block-size: auto;
+  block-size: 100%;
+  overflow: auto;
 }
