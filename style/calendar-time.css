@@ -1,18 +1,43 @@
 .containerTime {
-  padding-inline-end: 1rem;
+  padding-inline-end: .4rem;
   inline-size: auto;
-  block-size: auto;
+  block-size: 100vh;
   display: grid;
-  grid-template-columns: 3.75rem repeat(7, 1fr);
-  grid-template-rows: repeat(24, 4rem);
-  border: 1px solid red;
+  grid-template-columns: 5rem repeat(7, 1fr);
+  grid-template-rows: 1.5rem repeat(26, 4rem);
+  overflow: auto;
 }
 
-.hour{
+.containerTime::-webkit-scrollbar {
+  inline-size: .6rem;
+}
+
+.containerTime::-webkit-scrollbar-thumb {
+  background: #c4c7c9;
+  border-radius: 1rem;
+}
+
+.hour {
   position: relative;
 }
 
-.hour hr{
+#firstChild{
+  position: relative;
+  inset-block-start: 0;
+  inset-inline-start: 1.6rem;
+  font-size: .7rem;
+}
+
+.containerTime span {
+  font: var(--body3-regular);
+  color: var(--gray20);
+  position: relative;
+  inset-block-start: 3.1rem;
+  inset-inline-start: 2.1rem;
+  z-index: -1;
+}
+
+.hour hr {
   margin: 0;
   border: 0;
   inline-size: 1rem;
@@ -21,9 +46,10 @@
   position: absolute;
   inset-block-end: 0;
   inset-inline-end: 0;
+  z-index: -1;
 }
 
-.containerTask{
+.containerTask {
   border-inline-start: 1px solid var(--gray20);
   border-block-end: 1px solid var(--gray20);
 }

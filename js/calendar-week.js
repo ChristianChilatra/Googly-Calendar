@@ -63,7 +63,6 @@ function showWeekDiff(){
 function showWeekLast(){
   if (Math.sign(currentDay - 7) === 1 ){
     currentDay = currentDay - 7
-    console.log("Dia: " +currentDay);
     $weekDays.innerHTML = ""
     showCalendarWeek()
   }
@@ -72,7 +71,6 @@ function showWeekLast(){
 function showWeekNext(){
   if ((currentDay + 7) <= monthAmount) {
     currentDay += 7
-    console.log("Dia: " +currentDay);
     $weekDays.innerHTML = ""
     showCalendarWeek()
   }

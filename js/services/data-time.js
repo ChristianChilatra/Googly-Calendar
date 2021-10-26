@@ -9,7 +9,11 @@ function setFormatTime(configTime, configDate = date) {
 }
 
 
+export function getDateTimeZone() {
+  return date.getTimezoneOffset() / 60
+}
 export function getDateDay() {
+
   return date.getDay()
 }
 export function getDateMonth() {
