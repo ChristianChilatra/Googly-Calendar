@@ -20,12 +20,14 @@ function showAddTask(event) {
   const $windowTaskHeight = $windowTask.getBoundingClientRect().height
   const $windowViewPortWidth = window.innerWidth
   const $windowViewPortHeight = window.innerHeight
-  let positionCursorX = function (){
+  const positionCursorX = function (){
     if (event.clientX > ($windowViewPortWidth / 2)) {
       return (event.clientX - $windowTaskWidth)
+    }else{
+      return event.clientX
     }
   }
-  let positionCursorY = function(){
+  const positionCursorY = function(){
     if (event.clientY > ($windowViewPortHeight / 2)) {
       return event.clientY -$windowTaskHeight
     } else if ($windowViewPortHeight < 800){
