@@ -7,7 +7,6 @@ export default function setTask() {
   const $containerTask = document.querySelectorAll(".containerTask")
   const $buttonCancelTask = document.querySelector("#cancel")
 
-    console.log($buttonCancelTask);
   $containerTask.forEach($element => {
     $element.addEventListener("click", showAddTask)
   })
@@ -21,22 +20,20 @@ function showAddTask(event) {
   const $windowTaskHeight = $windowTask.getBoundingClientRect().height
   const $windowViewPortWidth = window.innerWidth
   const $windowViewPortHeight = window.innerHeight
-  let positionCursorX = event.clientX
-  let positionCursorY = event.clientY
-
-  if (positionCursorX > ($windowViewPortWidth / 2)) {
-    positionCursorX -= $windowTaskWidth
-    setPositionModal(positionCursorX, positionCursorY)
+  let positionCursorX = function (){
+    if (event.clientX > ($windowViewPortWidth / 2)) {
+      return (event.clientX - $windowTaskWidth)
+    }
   }
-  if (positionCursorY > ($windowViewPortHeight / 2)) {
-    positionCursorY -= $windowTaskHeight
-    setPositionModal(positionCursorX, positionCursorY)
-  }
-  if ($windowViewPortHeight < 800){
-    positionCursorY = ($windowTaskHeight*25)/100
-    setPositionModal(positionCursorX, positionCursorY)
+  let positionCursorY = function(){
+    if (event.clientY > ($windowViewPortHeight / 2)) {
+      return event.clientY -$windowTaskHeight
+    } else if ($windowViewPortHeight < 800){
+      return ($windowTaskHeight*25)/100
+    }
   }
 
+  setPositionModal(positionCursorX(), positionCursorY())
 }
 
 function setPositionModal(positionCursorX, positionCursorY){
@@ -46,5 +43,4 @@ function setPositionModal(positionCursorX, positionCursorY){
 
 function hiddenAddTask(){
   $windowTask.open = false
-  console.log("ok");
 }
