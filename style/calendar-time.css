@@ -21,7 +21,7 @@
   position: relative;
 }
 
-#firstChild{
+#firstChild {
   position: relative;
   inset-block-start: 0;
   inset-inline-start: 1.6rem;
@@ -52,4 +52,11 @@
 .containerTask {
   border-inline-start: 1px solid var(--gray20);
   border-block-end: 1px solid var(--gray20);
+  cursor: pointer;
+}
+
+.containerTask:hover {
+  transition: all .3s;
+  background: var(--gray10);
+
 }

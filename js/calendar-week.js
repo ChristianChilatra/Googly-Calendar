@@ -3,16 +3,16 @@ import { formatCurrentMonth, formatCurrentWeek, formatCurrentWeekJust } from "./
 import { createDOM } from "./utils/dom.js"
 import {weekDaysList} from "./utils/dictionary.js"
 
-let monthCurrent = getMonth()
+let currentMonth = getMonth()
 let currentDay = parseInt(getTimeNumberFormat().split("-")[2])
-const monthAmount = getMonthAmount(monthCurrent)
+const monthAmount = getMonthAmount(currentMonth)
 const $weekDays = document.querySelector(".containerDays")
 
 showWeekDiff()
 
 export default function showCalendarWeek() {
 
-  const monthDays = formatCurrentMonth(monthCurrent, monthAmount)
+  const monthDays = formatCurrentMonth(currentMonth, monthAmount)
   const weekDays = formatCurrentWeek(monthDays)
   let weekCurrent = 0
 
