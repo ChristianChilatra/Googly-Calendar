@@ -1,10 +1,9 @@
 .containerTime {
   padding-inline-end: .4rem;
   inline-size: auto;
-  block-size: 100vh;
   display: grid;
   grid-template-columns: 5rem repeat(7, 1fr);
-  grid-template-rows: 1.5rem repeat(26, 4rem);
+  grid-template-rows: 1.5rem repeat(24, 4rem);
   overflow: auto;
 }
 

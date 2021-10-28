@@ -1,5 +1,5 @@
-@import url(containerFirst.css);
-@import url(containerSecond.css);
+@import url(container-first.css);
+@import url(container-second.css);
 
 header {
   grid-area: header;

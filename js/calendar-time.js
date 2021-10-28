@@ -5,6 +5,11 @@ import { getTimeZone } from "./get-data.js";
 
 const $containerGridTime = document.querySelector(".containerTime")
 
+const $containerHeader = document.querySelector("header")
+const $containerHeaderHeight = $containerHeader.getBoundingClientRect().height
+const $containerCalendarWeek = document.querySelector(".containerDays")
+const $containerCalendarWeekHeight = $containerCalendarWeek.getBoundingClientRect().height
+
 export default function setGridTime() {
     for (let index = 0; index < 25; index++) {
         $containerGridTime.append(createDOM(`
@@ -17,6 +22,8 @@ export default function setGridTime() {
         }
     }
 
+    $containerGridTime.style.blockSize = `calc(100vh - (${$containerHeaderHeight}px + ${$containerCalendarWeekHeight}px))`
+    
     const $selectGrid = $containerGridTime.querySelectorAll("div")
     const $selectFirstGrid = []
 

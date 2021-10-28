@@ -2,9 +2,7 @@
 @import url(container-input-meet.css);
 .modalMeet {
   padding: 1.25rem 3rem;
-  max-inline-size: 28rem;
-  inline-size: 100%;
-  border-radius: .5rem;
+  inline-size: 20rem;  border-radius: .5rem;
   border: none;
   box-shadow: 0.08734026551246643px 2.5244154930114746px 7.496296405792236px 0px rgba(0, 0, 0, 0.07);
   box-shadow: 0px 0px 50px -6px rgba(0, 0, 0, 0.6);
