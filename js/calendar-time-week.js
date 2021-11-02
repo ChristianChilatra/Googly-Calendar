@@ -1,6 +1,6 @@
 import { createDOM } from "./utils/dom.js";
 import { hoursDay } from "./utils/dictionary.js";
-import { getTimeZone } from "./get-data.js";
+import { getDefaultData } from "./services/data-time.js";
 
 
 const $containerGridTime = document.querySelector(".containerTime")
@@ -23,7 +23,7 @@ export default function setGridTime() {
     }
 
     $containerGridTime.style.blockSize = `calc(100vh - (${$containerHeaderHeight}px + ${$containerCalendarWeekHeight}px))`
-    
+
     const $selectGrid = $containerGridTime.querySelectorAll("div")
     const $selectFirstGrid = []
 
@@ -35,7 +35,7 @@ export default function setGridTime() {
     $selectFirstGrid.forEach(($element, index) => {
         if (index === 0) {
             $element.querySelector("span").setAttribute("id","firstChild")
-            $element.querySelector("span").textContent = `GMT-0${getTimeZone()}`
+            $element.querySelector("span").textContent = `GMT-0${getDefaultData().getTimezoneOffset() / 60}`
         }
         $element.style.cssText = "position: sticky; inset-block-start: 0; background: var(--white)"
     })

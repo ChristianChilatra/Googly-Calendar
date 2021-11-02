@@ -1,60 +1,71 @@
-import {getMonthAmount } from "../get-data.js"
+import { getConfigDate, getAmounthMonth } from "../services/data-time.js"
 
 
-export function formatCurrentMonth(monthCurrent, monthAmount){
-  const calendarAmount = []
+export function formatCurrentMonth(month) {
 
-  for (let index = 1; index <= monthAmount; index++) { //---// Agrega Dias del Mes Actual //---//
-    calendarAmount.push(index)
+  const lastMonth = []
+  const currentMonth = []
+  const nextMonth = []
+
+  const date = getConfigDate(month)
+  const firstDay = date.getDay();
+  const amounthMonthCurrent = getAmounthMonth(month);
+  //-------------------------------------------------------------------------------------//
+  //------------------------------//Creacion Array de MES//------------------------------//
+  //-------------------------------------------------------------------------------------//
+
+  //Obtenemos Array con dias del mes Anterior
+  for (let index = 0; index < getAmounthMonth(date.getMonth()-1); index++) {
+    lastMonth.push(index + 1)
+  }
+  //Obtenemos Array con dias del mes Actual
+  for (let index = 0; index < amounthMonthCurrent; index++) {
+
+    currentMonth.push(index + 1)
+  }
+  //Obtenemos Array con dias del mes Siguiente
+  for (let index = 0; index < getAmounthMonth(date.getMonth() +1); index++) {
+    nextMonth.push(index + 1)
   }
 
-  let numberLast = getMonthAmount(monthCurrent - 1)
-  let numberNext = 1
+  //-------------------------------------------------------------------------------------//
+  //--------------/*Calendario + Dias Mes Anterior + Dias Mes Siguiente*/----------------//
+  //-------------------------------------------------------------------------------------//
 
-  while (calendarAmount.length < 42) { //---// Agrega al array los dias del mes anterior
-    if (calendarAmount.length < 42) {
-      calendarAmount.push(numberNext)
-      numberNext++
-    } else { break }
-    if (calendarAmount.length < 42) {       // + dias del sigueinte mes //---//
-      calendarAmount.unshift(numberLast)
-      numberLast--
-    } else { break }
+  const calendarWeek = []
+
+  let count = lastMonth.length - 1
+
+  calendarWeek.push(...currentMonth)
+
+  for (let index = 0; index < firstDay; index++) {
+    calendarWeek.unshift(lastMonth[count])
+    count--
   }
-  return calendarAmount
+
+  for (let index = 0; calendarWeek.length < 42; index++) {
+    calendarWeek.push(nextMonth[index])
+  }
+
+  return calendarWeek
 }
-export function formatCurrentWeek(currentMonthDays){
 
-  const newArray = []
-  let arrayTemp = []
+export function formatCalendarWeek(calendarWeek){
+  //-------------------------------------------------------------------------------------//
+  //--------------------------//Calendario con Formato 7*6//-----------------------------//
+  //-------------------------------------------------------------------------------------//
 
-  currentMonthDays.forEach((element)=>{
-    arrayTemp.push(element)
-    if (arrayTemp.length > 6){
-      newArray.push(arrayTemp)
-      arrayTemp = []
+  const formatCalendarWeek = []
+  let arrayUtil = []
+
+  calendarWeek.forEach((element, index) => {
+    if (((index + 1) % 7) === 0) {
+      arrayUtil.push(element)
+      formatCalendarWeek.push(arrayUtil)
+      arrayUtil = []
+    } else {
+      arrayUtil.push(element)
     }
   })
-
-  return newArray
-
-}
-
-export function formatCurrentWeekJust(weekDays, monthAmount){
-
-  let newArrayWeekDays = weekDays
-
-  const numberIteratorInitial = newArrayWeekDays[0].indexOf(1)
-  const numberIteratorFinish = newArrayWeekDays[newArrayWeekDays.length - 1].indexOf(monthAmount)
-
-
-  for (let index = 0; index < numberIteratorInitial; index++) {
-    newArrayWeekDays[0].shift()
-  }
-
-  for (let index = newArrayWeekDays[newArrayWeekDays.length - 1].length - 1; index > numberIteratorFinish; index--) {
-    newArrayWeekDays[newArrayWeekDays.length - 1].pop()
-  }
-
-  return newArrayWeekDays
+  return formatCalendarWeek
 }

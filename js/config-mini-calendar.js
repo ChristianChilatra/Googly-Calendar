@@ -1,4 +1,4 @@
-import { getTimeNumberFormat, getMonthFormat, getMonthAmount, getMonth } from "./get-data.js"
+import { getDefaultData, getConfigDate, getAmounthMonth, getDateTimeNumberFormat, getDateMonthFormat} from "./services/data-time.js"
 import { createDOM } from "./utils/dom.js"
 import { formatCurrentMonth } from "./utils/format-data.js"
 
@@ -9,21 +9,20 @@ const $sideBar = document.querySelector(".sideBar")//---// DOM Side Bar //---//
 const $miniCalendar = $sideBar.querySelector(".days") //---// DOM Container Dias Calendario //---//
 //---// la variables "monthCurrent" nos permitira ejecutar consulta y
 //visualizacion del mes deseado con datos formateados //---//
-let monthCurrent = getMonth()
+// let monthCurrent = getMonth()
 
+//---// Mes actual//---//
+let monthCurrent = getDefaultData().getMonth()
 
 //-------------------// Configuracion MIni Calendar //-------------------//
-export function configMiniCalendar($sideBar) {
-
-  //---// numero dias del mes actual//---//
-  const monthAmount = getMonthAmount(monthCurrent)
+export function configMiniCalendar() {
 
   //---// Mostramos Mes Mini Calendar //---//
   setMonthCalendar()
 
-  //---// Calendario + Dias del Mes Anterior + Dias del Mes Siguiente //---//
+  //---// Calendario con Formato 7*6 //---//
 
-  const calendarAmount = formatCurrentMonth(monthCurrent, monthAmount) //---//Almacena los dias segun mes
+  const calendarAmount = formatCurrentMonth(monthCurrent) //---//Almacena los dias segun mes
 
   //---// Agrega Dias al Mini Calendar //---//
 
@@ -31,7 +30,7 @@ export function configMiniCalendar($sideBar) {
 
   //---// Agrega estilo a NO dias del mes actual //---//
 
-  setDayStyle($miniCalendar, calendarAmount, monthAmount)
+  setDayStyle($miniCalendar, calendarAmount, getAmounthMonth(monthCurrent))
 
 }
 
@@ -60,8 +59,8 @@ function eventSetMonth($sideBar, $miniCalendar) {
 function setMonthCalendar() {
   const $monthTime = $sideBar.querySelector("time")
 
-  $monthTime.setAttribute("datatime", getTimeNumberFormat())
-  $monthTime.querySelector("h2").textContent = getMonthFormat(monthCurrent)
+  $monthTime.setAttribute("datatime", getDateTimeNumberFormat(getConfigDate(monthCurrent)))
+  $monthTime.querySelector("h2").textContent = getDateMonthFormat(getConfigDate(monthCurrent))
 }
 
 //---// Agrega Dias al Mini Calendar //---//

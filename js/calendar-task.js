@@ -1,6 +1,14 @@
 
 
 const $windowTask = document.querySelector(".modalMeet")
+const $styleWindowTask = window.getComputedStyle($windowTask)
+
+const $paddinWidthWidowTask = parseInt($styleWindowTask.paddingInlineStart) + parseInt($styleWindowTask.paddingInlineEnd)
+const $WidthWidowTask = parseInt($styleWindowTask.width)
+
+const $paddinHeigthWidowTask = parseInt($styleWindowTask.paddingBlockStart) + parseInt($styleWindowTask.paddingBlockEnd)
+const $heigthWidowTask = parseInt($styleWindowTask.height)
+
 
 export default function setTask() {
 
@@ -10,47 +18,53 @@ export default function setTask() {
   $containerTask.forEach($element => {
     $element.addEventListener("click", showAddTask)
   })
-
+  window.addEventListener("click", validationView)
   $buttonCancelTask.addEventListener("click", hiddenAddTask)
 
 }
 
 function showAddTask(event) {
-  const $windowTaskWidth = $windowTask.getBoundingClientRect().width
-  const $windowTaskHeight = $windowTask.getBoundingClientRect().height
   const $windowViewPortWidth = window.innerWidth
   const $windowViewPortHeight = window.innerHeight
 
-  const positionCursorX = function (){
+  const positionCursorX = function () {
     if (event.clientX > ($windowViewPortWidth / 2)) {
-      return event.clientX - $windowTaskHeight
-    }else{
+      return event.clientX - ($WidthWidowTask + $paddinWidthWidowTask)
+    } else {
       return event.clientX
     }
   }
-  const positionCursorY = function(){
-    if ($windowViewPortHeight < 800){
-      return ($windowTaskHeight*30)/100
-    }else {
-      if (event.clientY > ($windowViewPortHeight/2)) {
-        return event.clientY - $windowTaskWidth
-      }else{
+  const positionCursorY = function () {
+    if ($windowViewPortHeight < 800) {
+      return ($windowViewPortHeight * 30) / 100
+    } else {
+      if (event.clientY > ($windowViewPortHeight / 2)) {
+        return (event.clientY - ($heigthWidowTask + $paddinHeigthWidowTask))
+      } else {
         return event.clientY
       }
-    } 
+    }
   }
-  console.log("x: "+ positionCursorX());
-  console.log("y: "+ positionCursorY());
 
-  setPositionModal(positionCursorX(), positionCursorY())
+  if ($windowTask.open) {
+    hiddenAddTask()
+  }else{
+    $windowTask.open = true
+    setPositionModal(positionCursorX(), positionCursorY())
+  }
+
 }
 
 function setPositionModal(positionCursorX, positionCursorY){
-
   $windowTask.style.cssText = `inset-inline-start: ${positionCursorX}px; inset-block-start:${positionCursorY}px`
-  $windowTask.open = true
 }
 
 function hiddenAddTask(){
   $windowTask.open = false
+}
+
+function validationView(event){
+  if (event.target.className != "containerTask"){
+    hiddenAddTask()
+  }
 }
