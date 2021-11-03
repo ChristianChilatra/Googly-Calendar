@@ -17,7 +17,7 @@ export function getAmounthMonth(value) {
   return new Date(date.getFullYear(), value + 1, 0).getDate()
 }
 
-export function getDateMonthFormat(data) {
+export function getDateMonthFormat(configDate) {
 
   const configTime = {
     day: "numeric",    //Se establece formato de funcion Intl.DateTimeFormat
@@ -25,7 +25,7 @@ export function getDateMonthFormat(data) {
     year: "numeric"
   }
 
-  let formatDate = setFormatTime(configTime, data).split(" ")
+  let formatDate = setFormatTime(configTime, configDate).split(" ")
   formatDate.shift()
   formatDate.shift()
   formatDate = formatDate.join(" ")
@@ -33,7 +33,7 @@ export function getDateMonthFormat(data) {
   return formatDate
 }
 
-export function getDateTimeNumberFormat(data) {
+export function getDateTimeNumberFormat(configDate) {
 
   const configTime = {
     day: "numeric",    //Se establece formato de funcion Intl.DateTimeFormat
@@ -41,10 +41,10 @@ export function getDateTimeNumberFormat(data) {
     year: "numeric"
   }
 
-  const formatDate = setFormatTime(configTime, data).split("/").reverse()
+  const formatDate = setFormatTime(configTime, configDate).split("/").reverse()
   return formatDate.join("-")
 }
-export function getDateTimeFormat() {
+export function getDateTimeFormat(configDate) {
 
   const configTime = {
     day: "numeric",    //Se establece formato de funcion Intl.DateTimeFormat
@@ -52,7 +52,7 @@ export function getDateTimeFormat() {
     year: "numeric"
   }
 
-  let formatDate = setFormatTime(configTime).split(" ")
+  let formatDate = setFormatTime(configTime, configDate).split(" ")
   formatDate.shift()
   formatDate.shift()
   formatDate = formatDate.join(" ")

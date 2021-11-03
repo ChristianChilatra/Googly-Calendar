@@ -1,4 +1,4 @@
-import { getDefaultData, getConfigDate, getAmounthMonth, getDateTimeNumberFormat} from "./services/data-time.js";
+import { getDefaultData, getConfigDate, getAmounthMonth, getDateTimeNumberFormat } from "./services/data-time.js";
 import { formatCurrentMonth, formatCalendarWeek } from "./utils/format-data.js"
 import { createDOM } from "./utils/dom.js"
 import { weekDaysList } from "./utils/dictionary.js"
@@ -13,11 +13,12 @@ const $weekDays = document.querySelector(".containerDays") //CONTENEDOR DE DIAS 
 
 
 
-export function showCalendarWeek() {
+export function showCalendarDay() {
 
   $weekDays.style.cssText = `
-  grid-template-columns: 5rem repeat(7, 1fr);
-  grid-template-areas: ". DOM LUN MAR MIE JUE VIE SAB";`
+  grid-template-columns: 5rem auto;
+  grid-template-areas: ". DAY";
+  justify-content: flex-start;`
 
   const weekCalendar = formatCurrentMonth(currentMonth)//ARRAY CON DIAS DEL MES + DIAS DEL MES ANTERIOR Y SIGUIENTE
   const calendarWeekFormat = formatCalendarWeek(weekCalendar) //ARRAY CON FORMATO CALENDARIO
@@ -32,21 +33,21 @@ export function showCalendarWeek() {
 
 }
 
-function searchCurrentDay(calendarWeekFormat){
+function searchCurrentDay(calendarWeekFormat) {
 
   let statusSearch = true
   let count = 0
 
-  while (statusSearch){
-    if(count === 0){
-      if (calendarWeekFormat[count].indexOf(currentDay, data.getDay()) != -1){
+  while (statusSearch) {
+    if (count === 0) {
+      if (calendarWeekFormat[count].indexOf(currentDay, data.getDay()) != -1) {
         statusSearch = false
-      }else{
+      } else {
         count++
       }
-    } else if(calendarWeekFormat[count].indexOf(currentDay) != -1){
+    } else if (calendarWeekFormat[count].indexOf(currentDay) != -1) {
       statusSearch = false
-    }else {
+    } else {
       count++
     }
   }
@@ -55,20 +56,19 @@ function searchCurrentDay(calendarWeekFormat){
 
 function setDaysDom(calendarWeekFormat, $weekDays, weekCurrent) {
 
-  calendarWeekFormat[weekCurrent].forEach((element, index) => {
-    $weekDays.append(createDOM(`
-      <button class="day" id="day_${index}" style = 'grid-area: ${weekDaysList[index]}'">
-          <h3>${weekDaysList[index]}</h3>
-          <p>${element}</p>
+  const day = calendarWeekFormat[weekCurrent].indexOf(currentDay)
+  $weekDays.append(createDOM(`
+      <button class="day" id="day_${day}" style = 'grid-area: DAY'">
+          <h3>${weekDaysList[day]}</h3>
+          <p>${currentDay}</p>
         </button>
     `))
-    if (index === data.getDay() && getConfigDate(data.getMonth()).getMonth() === currentMonth && parseInt(getDateTimeNumberFormat().split("-")[2]) === currentDay) {
-      const $currentDayDOM = $weekDays.querySelector(`#day_${index}`)
+  if (day === data.getDay() && getConfigDate(data.getMonth()).getMonth() === currentMonth && parseInt(getDateTimeNumberFormat().split("-")[2]) === currentDay) {
+    const $currentDayDOM = $weekDays.querySelector(`#day_${day}`)
       $currentDayDOM.querySelector("p").style.background = "var(--blue10)"
       $currentDayDOM.querySelector("p").style.color = "var(--white)"
       $currentDayDOM.querySelector("h3").style.color = "var(--blue10)"
     }
-  })
 }
 
 function positionWeek() {
@@ -78,7 +78,7 @@ function positionWeek() {
   $evenButtonLastWeek.addEventListener('click', showWeekLast)
   $evenButtonNextWeek.addEventListener('click', showWeekNext);
 }
-export function removeEventListenerWeek(){
+export function removeEventListenerDay() {
   const $evenButtonLastWeek = document.querySelector(".buttonPrevious")
   const $evenButtonNextWeek = document.querySelector(".buttonFollowing")
 
@@ -87,30 +87,29 @@ export function removeEventListenerWeek(){
 }
 
 function showWeekLast() {
-  if (Math.sign(currentDay - 7) === 1) {
-    currentDay = currentDay - 7
+  if (Math.sign(currentDay - 1) === 1) {
+    currentDay--
     $weekDays.innerHTML = ""
-    showCalendarWeek()
-  }else{
+    showCalendarDay()
+  } else {
     currentMonth--
     amounthMonth = getAmounthMonth(currentMonth)
-    currentDay = (amounthMonth + (currentDay - 7))
+    currentDay = amounthMonth
     $weekDays.innerHTML = ""
-    showCalendarWeek()
+    showCalendarDay()
   }
 
 
 }
 function showWeekNext() {
-  if ((currentDay + 7) <= amounthMonth) {
-    currentDay += 7
+  if ((currentDay + 1) <= amounthMonth) {
+    currentDay ++
     $weekDays.innerHTML = ""
-    showCalendarWeek()
+    showCalendarDay()
   } else {
-    amounthMonth = getAmounthMonth(currentMonth)
     currentMonth++
-    currentDay = ((currentDay + 7) - amounthMonth)
+    currentDay = 1
     $weekDays.innerHTML = ""
-    showCalendarWeek()
+    showCalendarDay()
   }
 }

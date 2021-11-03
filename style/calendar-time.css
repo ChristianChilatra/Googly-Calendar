@@ -2,7 +2,6 @@
   padding-inline-end: .4rem;
   inline-size: auto;
   display: grid;
-  grid-template-columns: 5rem repeat(7, 1fr);
   grid-template-rows: 1.5rem repeat(24, 4rem);
   overflow: auto;
 }

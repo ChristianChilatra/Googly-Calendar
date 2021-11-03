@@ -48,23 +48,31 @@ function showAddTask(event) {
 
   if ($windowTask.open) {
     hiddenAddTask()
-  }else{
+  } else {
     $windowTask.open = true
     setPositionModal(positionCursorX(), positionCursorY())
   }
 
 }
 
-function setPositionModal(positionCursorX, positionCursorY){
+function setPositionModal(positionCursorX, positionCursorY) {
   $windowTask.style.cssText = `inset-inline-start: ${positionCursorX}px; inset-block-start:${positionCursorY}px`
 }
 
-function hiddenAddTask(){
+function hiddenAddTask() {
   $windowTask.open = false
 }
 
-function validationView(event){
-  if (event.target.className != "containerTask"){
+function validationView(event) {
+  if (event.target.className != "containerTask" && searchPath(event.path)) {
     hiddenAddTask()
+  }
+}
+
+function searchPath(list) {
+  if (list.indexOf("dialog.modalMeet")!= -1) {
+    return true
+  }else{
+    return false
   }
 }
