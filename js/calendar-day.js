@@ -23,17 +23,17 @@ export function showCalendarDay() {
   const weekCalendar = formatCurrentMonth(currentMonth)//ARRAY CON DIAS DEL MES + DIAS DEL MES ANTERIOR Y SIGUIENTE
   const calendarWeekFormat = formatCalendarWeek(weekCalendar) //ARRAY CON FORMATO CALENDARIO
 
-  let weekCurrent = searchCurrentDay(calendarWeekFormat)//OBTENEMOS POSICION DEL ARRAY CON FORMATO CALENDARIO SEGUN DIA ACTUAL
+  let weekCurrent = searchCurrentDay(calendarWeekFormat, currentDay)//OBTENEMOS POSICION DEL ARRAY CON FORMATO CALENDARIO SEGUN DIA ACTUAL
 
-  setDaysDom(calendarWeekFormat, $weekDays, weekCurrent)//INSERTAMOS EN DOM DIAS DE LA SEMANA ACTUAL
+  setDaysDom(calendarWeekFormat, $weekDays, weekCurrent, currentDay)//INSERTAMOS EN DOM DIAS DE LA SEMANA ACTUAL
 
   positionWeek()//PERMITE NAVEGAR EN FECHAS POR SEMANAS
+  returnCurrentDay()
 
   showDateHeader(currentMonth)
-
 }
 
-function searchCurrentDay(calendarWeekFormat) {
+function searchCurrentDay(calendarWeekFormat, currentDay) {
 
   let statusSearch = true
   let count = 0
@@ -54,7 +54,7 @@ function searchCurrentDay(calendarWeekFormat) {
   return count
 }
 
-function setDaysDom(calendarWeekFormat, $weekDays, weekCurrent) {
+function setDaysDom(calendarWeekFormat, $weekDays, weekCurrent, currentDay) {
 
   const day = calendarWeekFormat[weekCurrent].indexOf(currentDay)
   $weekDays.append(createDOM(`
@@ -65,10 +65,10 @@ function setDaysDom(calendarWeekFormat, $weekDays, weekCurrent) {
     `))
   if (day === data.getDay() && getConfigDate(data.getMonth()).getMonth() === currentMonth && parseInt(getDateTimeNumberFormat().split("-")[2]) === currentDay) {
     const $currentDayDOM = $weekDays.querySelector(`#day_${day}`)
-      $currentDayDOM.querySelector("p").style.background = "var(--blue10)"
-      $currentDayDOM.querySelector("p").style.color = "var(--white)"
-      $currentDayDOM.querySelector("h3").style.color = "var(--blue10)"
-    }
+    $currentDayDOM.querySelector("p").style.background = "var(--blue10)"
+    $currentDayDOM.querySelector("p").style.color = "var(--white)"
+    $currentDayDOM.querySelector("h3").style.color = "var(--blue10)"
+  }
 }
 
 function positionWeek() {
@@ -81,10 +81,14 @@ function positionWeek() {
 export function removeEventListenerDay() {
   const $evenButtonLastWeek = document.querySelector(".buttonPrevious")
   const $evenButtonNextWeek = document.querySelector(".buttonFollowing")
+  const $buttonCurrentDay = document.querySelector(".buttonCalendar")
 
   $evenButtonLastWeek.removeEventListener('click', showWeekLast)
   $evenButtonNextWeek.removeEventListener('click', showWeekNext);
+  $buttonCurrentDay.removeEventListener("click", showCurrentDay)
 }
+
+
 
 function showWeekLast() {
   if (Math.sign(currentDay - 1) === 1) {
@@ -103,7 +107,7 @@ function showWeekLast() {
 }
 function showWeekNext() {
   if ((currentDay + 1) <= amounthMonth) {
-    currentDay ++
+    currentDay++
     $weekDays.innerHTML = ""
     showCalendarDay()
   } else {
@@ -113,3 +117,19 @@ function showWeekNext() {
     showCalendarDay()
   }
 }
+
+function returnCurrentDay() {
+  const $buttonCurrentDay = document.querySelector(".buttonCalendar")
+  $buttonCurrentDay.addEventListener("click", showCurrentDay)
+}
+
+
+function showCurrentDay() {
+  currentDay = parseInt(getDateTimeNumberFormat().split("-")[2]) //NUMERO DE DIA ACTUAL
+  currentMonth = getConfigDate(data.getMonth()).getMonth()
+  amounthMonth = getAmounthMonth(currentMonth)
+  $weekDays.innerHTML = ""
+  showCalendarDay()
+}
+
+

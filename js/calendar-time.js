@@ -26,7 +26,7 @@ export function setGridTimeWeek() {
         }
     }
 
-    $containerGridTime.style.blockSize = `calc(100vh - (${$containerHeaderHeight}px + ${$containerCalendarWeekHeight}px))`
+    $containerGridTime.style.blockSize = `auto`
 
     const $selectGrid = $containerGridTime.querySelectorAll("div")
     const $selectFirstGrid = []

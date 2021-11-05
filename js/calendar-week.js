@@ -1,4 +1,4 @@
-import { getDefaultData, getConfigDate, getAmounthMonth, getDateTimeNumberFormat} from "./services/data-time.js";
+import { getDefaultData, getConfigDate, getAmounthMonth, getDateTimeNumberFormat } from "./services/data-time.js";
 import { formatCurrentMonth, formatCalendarWeek } from "./utils/format-data.js"
 import { createDOM } from "./utils/dom.js"
 import { weekDaysList } from "./utils/dictionary.js"
@@ -27,26 +27,27 @@ export function showCalendarWeek() {
   setDaysDom(calendarWeekFormat, $weekDays, weekCurrent)//INSERTAMOS EN DOM DIAS DE LA SEMANA ACTUAL
 
   positionWeek()//PERMITE NAVEGAR EN FECHAS POR SEMANAS
+  returnCurrentDay()
 
   showDateHeader(currentMonth)
 
 }
 
-function searchCurrentDay(calendarWeekFormat){
+function searchCurrentDay(calendarWeekFormat) {
 
   let statusSearch = true
   let count = 0
 
-  while (statusSearch){
-    if(count === 0){
-      if (calendarWeekFormat[count].indexOf(currentDay, data.getDay()) != -1){
+  while (statusSearch) {
+    if (count === 0) {
+      if (calendarWeekFormat[count].indexOf(currentDay, data.getDay()) != -1) {
         statusSearch = false
-      }else{
+      } else {
         count++
       }
-    } else if(calendarWeekFormat[count].indexOf(currentDay) != -1){
+    } else if (calendarWeekFormat[count].indexOf(currentDay) != -1) {
       statusSearch = false
-    }else {
+    } else {
       count++
     }
   }
@@ -78,12 +79,14 @@ function positionWeek() {
   $evenButtonLastWeek.addEventListener('click', showWeekLast)
   $evenButtonNextWeek.addEventListener('click', showWeekNext);
 }
-export function removeEventListenerWeek(){
+export function removeEventListenerWeek() {
   const $evenButtonLastWeek = document.querySelector(".buttonPrevious")
   const $evenButtonNextWeek = document.querySelector(".buttonFollowing")
+  const $buttonCurrentWeek = document.querySelector(".buttonCalendar")
 
   $evenButtonLastWeek.removeEventListener('click', showWeekLast)
   $evenButtonNextWeek.removeEventListener('click', showWeekNext);
+  $buttonCurrentWeek.removeEventListener("click", showCurrentWeek)
 }
 
 function showWeekLast() {
@@ -91,7 +94,7 @@ function showWeekLast() {
     currentDay = currentDay - 7
     $weekDays.innerHTML = ""
     showCalendarWeek()
-  }else{
+  } else {
     currentMonth--
     amounthMonth = getAmounthMonth(currentMonth)
     currentDay = (amounthMonth + (currentDay - 7))
@@ -113,4 +116,18 @@ function showWeekNext() {
     $weekDays.innerHTML = ""
     showCalendarWeek()
   }
+}
+
+function returnCurrentDay() {
+  const $buttonCurrentWeek = document.querySelector(".buttonCalendar")
+  $buttonCurrentWeek.addEventListener("click", showCurrentWeek)
+}
+
+
+function showCurrentWeek() {
+  currentDay = parseInt(getDateTimeNumberFormat().split("-")[2]) //NUMERO DE DIA ACTUAL
+  currentMonth = getConfigDate(data.getMonth()).getMonth()
+  amounthMonth = getAmounthMonth(currentMonth)
+  $weekDays.innerHTML = ""
+  showCalendarWeek()
 }
