@@ -6,7 +6,7 @@
   position: relative;
 }
 
-.buttonCalendar {
+.buttonCalendar.select{
   inline-size: auto;
   padding-inline-start: 0.75rem;
   padding-inline-end: 1rem;
@@ -14,13 +14,4 @@
   outline-style: none;
   stroke: red;
   appearance: none;
-}
-
-.select_arrow {
-  position: relative;
-  pointer-events: none;
-}
-
-.select_arrow i{
-  font-size: 0.5rem;
 }
