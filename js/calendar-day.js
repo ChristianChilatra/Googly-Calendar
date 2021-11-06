@@ -3,6 +3,7 @@ import { formatCurrentMonth, formatCalendarWeek } from "./utils/format-data.js"
 import { createDOM } from "./utils/dom.js"
 import { weekDaysList } from "./utils/dictionary.js"
 import showDateHeader from "./header.js"
+import { setGridTimeDay } from "./calendar-time.js"
 
 const data = getDefaultData()//OBJETO DATA
 let currentMonth = getConfigDate(data.getMonth()).getMonth() //MES ACTUAL
@@ -29,8 +30,8 @@ export function showCalendarDay() {
 
   positionWeek()//PERMITE NAVEGAR EN FECHAS POR SEMANAS
   returnCurrentDay()
-
   showDateHeader(currentMonth)
+  setGridTimeDay()
 }
 
 function searchCurrentDay(calendarWeekFormat, currentDay) {

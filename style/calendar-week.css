@@ -4,9 +4,7 @@
 
 .calendarWeek .containerDays {
   display: grid;
-  grid-template-columns: 5rem repeat(7, 1fr);
   grid-template-rows: 5.5rem;
-  grid-template-areas: ". DOM LUN MAR MIE JUE VIE SAB";
   padding-inline-end: 1rem;
 }
 

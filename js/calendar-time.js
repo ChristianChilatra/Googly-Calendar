@@ -3,6 +3,8 @@ import { hoursDay } from "./utils/dictionary.js";
 import { getDefaultData } from "./services/data-time.js";
 
 
+const data = getDefaultData()
+
 const $containerGridTime = document.querySelector(".containerTime")
 
 const $containerHeader = document.querySelector("header")
@@ -11,6 +13,10 @@ const $containerCalendarWeek = document.querySelector(".containerDays")
 const $containerCalendarWeekHeight = $containerCalendarWeek.getBoundingClientRect().height
 
 export function setGridTimeWeek() {
+
+    $containerGridTime.innerHTML = ""
+
+    let count = 0
 
     $containerGridTime.style.cssText = `
     grid-template-columns: 5rem repeat(7, 1fr);`
@@ -21,12 +27,13 @@ export function setGridTimeWeek() {
             `))
         for (let index = 0; index < 7; index++) {
             $containerGridTime.append(createDOM(`
-            <div class="containerTask"></div>
+            <div class="containerTask" id="${count}-${index}"></div>
             `))
         }
+        count++
     }
 
-    $containerGridTime.style.blockSize = `auto`
+    $containerGridTime.style.blockSize = `calc(100vh - (${$containerHeaderHeight}px + ${$containerCalendarWeekHeight}px))`
 
     const $selectGrid = $containerGridTime.querySelectorAll("div")
     const $selectFirstGrid = []
@@ -43,11 +50,18 @@ export function setGridTimeWeek() {
         }
         $element.style.cssText = "position: sticky; inset-block-start: 0; background: var(--white)"
     })
+
+    setCurrentHourWeek()
 }
 export function setGridTimeDay() {
 
+    $containerGridTime.innerHTML = ""
+
+
     $containerGridTime.style.cssText = `
     grid-template-columns: 5rem auto;`
+
+    let count = -1
 
     for (let index = 0; index < 25; index++) {
         $containerGridTime.append(createDOM(`
@@ -55,8 +69,9 @@ export function setGridTimeDay() {
             `))
         for (let index = 0; index < 1; index++) {
             $containerGridTime.append(createDOM(`
-            <div class="containerTask"></div>
+            <div class="containerTask" id="${count}"></div>
             `))
+            count++
         }
     }
 
@@ -77,4 +92,35 @@ export function setGridTimeDay() {
         }
         $element.style.cssText = "position: sticky; inset-block-start: 0; background: var(--white)"
     })
+    setCurrentHourDay()
 }
+
+function setCurrentHourDay() {
+
+    const $containerTask = document.querySelectorAll(".containerTask")
+    $containerTask.forEach($element => {
+        if (parseInt($element.id) === data.getHours()) {
+            $element.scrollIntoView()
+            $element.append(createDOM(`
+        <div class="currentHour" tabindex="1"></div>
+        `))
+        }
+    })
+
+}
+function setCurrentHourWeek() {
+
+
+
+    const $containerTask = document.querySelectorAll(".containerTask")
+    $containerTask.forEach($element => {
+        if ($element.id === `${data.getHours()}-${data.getDay()}`) {
+            $element.scrollIntoView()
+            $element.append(createDOM(`
+        <div class="currentHour"></div>
+        `))
+        }
+    })
+
+}
+

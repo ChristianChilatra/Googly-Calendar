@@ -3,6 +3,7 @@ import { formatCurrentMonth, formatCalendarWeek } from "./utils/format-data.js"
 import { createDOM } from "./utils/dom.js"
 import { weekDaysList } from "./utils/dictionary.js"
 import showDateHeader from "./header.js"
+import { setGridTimeWeek } from "./calendar-time.js"
 
 const data = getDefaultData()//OBJETO DATA
 let currentMonth = getConfigDate(data.getMonth()).getMonth() //MES ACTUAL
@@ -30,7 +31,7 @@ export function showCalendarWeek() {
   returnCurrentDay()
 
   showDateHeader(currentMonth)
-
+  setGridTimeWeek()
 }
 
 function searchCurrentDay(calendarWeekFormat) {

@@ -36,7 +36,7 @@ function showAddTask(event) {
   }
   const positionCursorY = function () {
     if ($windowViewPortHeight < 800) {
-      return ($windowViewPortHeight * 30) / 100
+      return ($windowViewPortHeight * 12) / 100
     } else {
       if (event.clientY > ($windowViewPortHeight / 2)) {
         return (event.clientY - ($heigthWidowTask + $paddinHeigthWidowTask))

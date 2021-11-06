@@ -56,5 +56,23 @@
 .containerTask:hover {
   transition: all .3s;
   background: var(--gray10);
+}
 
+.currentHour {
+  background: red;
+  inline-size: 100%;
+  block-size: .18rem;
+  position: relative;
+  inset-block-start: calc(50% - .18rem);
+}
+
+.currentHour::before {
+  content: "";
+  background: red;
+  display: block;
+  block-size: .5rem;
+  inline-size: .5rem;
+  position: relative;
+  inset-block-start: -.15rem;
+  border-radius: 50%;
 }
