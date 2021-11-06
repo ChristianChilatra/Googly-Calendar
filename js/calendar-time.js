@@ -1,6 +1,7 @@
 import { createDOM } from "./utils/dom.js";
 import { hoursDay } from "./utils/dictionary.js";
 import { getDefaultData } from "./services/data-time.js";
+import setTask from "./calendar-task.js"
 
 
 const data = getDefaultData()
@@ -16,7 +17,7 @@ export function setGridTimeWeek() {
 
     $containerGridTime.innerHTML = ""
 
-    let count = 0
+    let count = -1
 
     $containerGridTime.style.cssText = `
     grid-template-columns: 5rem repeat(7, 1fr);`
@@ -50,8 +51,9 @@ export function setGridTimeWeek() {
         }
         $element.style.cssText = "position: sticky; inset-block-start: 0; background: var(--white)"
     })
-
+    setTask()
     setCurrentHourWeek()
+
 }
 export function setGridTimeDay() {
 
@@ -92,6 +94,7 @@ export function setGridTimeDay() {
         }
         $element.style.cssText = "position: sticky; inset-block-start: 0; background: var(--white)"
     })
+    setTask()
     setCurrentHourDay()
 }
 

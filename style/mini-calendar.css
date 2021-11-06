@@ -1,4 +1,6 @@
-.miniCalendar {}
+.miniCalendar {
+  padding-block-start: 2.5rem;
+}
 
 .miniCalendar .month {
   display: flex;

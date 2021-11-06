@@ -56,7 +56,7 @@ export default function showSideBar(){
     $buttonPlus.querySelector("p").style.display = "block"
   }
   function visualButtomClose(){
-    $buttonPlus.style.cssText = "border-radius: 50%; inline-size: 2rem"
+    $buttonPlus.style.cssText = "border-radius: 50%; inline-size: 2rem; "
     $buttonPlus.querySelector("p").style.display = "none"
   }
   function blockSizeSideBar(value){

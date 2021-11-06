@@ -2,8 +2,6 @@ import { getConfigDate, getDateTimeFormat, getDateTimeNumberFormat } from "./ser
 import { showCalendarDay, removeEventListenerDay} from "./calendar-day.js"
 import { showCalendarWeek, removeEventListenerWeek} from "./calendar-week.js"
 import { setGridTimeWeek, setGridTimeDay} from "./calendar-time.js"
-
-import setTask from "./calendar-task.js"
 //dia Mes año//      //año/mes/dia//
 
 const $selectShowGrid = document.querySelector("#selectTime")
@@ -35,15 +33,13 @@ function loaderGrid(){
       $containerGrid.innerHTML = ""
       showCalendarDay()
       setGridTimeDay()
-      setTask()
       break;
     case "mes":
-      removeEventListenerWeek()      
+      removeEventListenerWeek()
       $containerDays.innerHTML = ""
       $containerGrid.innerHTML = ""
       showCalendarWeek()
       setGridTimeWeek()
-      setTask()
       break;
     case "año":
       break;

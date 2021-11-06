@@ -59,38 +59,3 @@ export function getDateTimeFormat(configDate) {
   formatDate = formatDate.replace(formatDate[0], formatDate[0].toUpperCase())
   return formatDate
 }
-
-
-// export function getDateTimeZone() {
-//   return date.getTimezoneOffset() / 60
-// }
-// export function getDateDay() {
-
-//   return date.getDay()
-// }
-// export function getDateMonth() {
-//   return date.getMonth()
-// }
-// export function getDateMonthAmount(value) {
-//   const newDate = new Date(date.getFullYear(), value + 1, 0).getDate()
-//   return newDate
-// }
-// export function getDateMonthFormat(configTime, monthCurrent) {
-//   const newDate = new Date()
-//   newDate.setMonth(monthCurrent)
-//   let formatDate = setFormatTime(configTime, newDate).split(" ")
-//   formatDate.shift()
-//   formatDate.shift()
-//   formatDate = formatDate.join(" ")
-//   formatDate = formatDate.replace(formatDate[0], formatDate[0].toUpperCase())
-
-//   return formatDate
-// }
-// export function getDateTimeFormat(configTime) {
-//   let formatDate = setFormatTime(configTime).split(" ")
-//   formatDate.shift()
-//   formatDate.shift()
-//   formatDate = formatDate.join(" ")
-//   formatDate = formatDate.replace(formatDate[0], formatDate[0].toUpperCase())
-//   return formatDate
-// }

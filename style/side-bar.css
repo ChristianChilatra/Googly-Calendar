@@ -26,8 +26,3 @@
   padding: 1.5rem;
   white-space: nowrap;
 }
-
-.buttonCalendar.isPlus {
-  position: relative;
-  z-index: 2;
-}

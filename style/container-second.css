@@ -2,14 +2,14 @@
   display: flex;
   align-items: center;
   inline-size: 9.0625rem;
-  gap: 3rem;
+  gap: 1rem;
   position: relative;
 }
 
-.containerSecond .buttonCalendar {
-  inline-size: 4.0625rem;
+.buttonCalendar {
+  inline-size: auto;
   padding-inline-start: 0.75rem;
-  padding-inline-end: 0.2rem;
+  padding-inline-end: 1rem;
   user-select: none;
   outline-style: none;
   stroke: red;
@@ -17,9 +17,7 @@
 }
 
 .select_arrow {
-  position: absolute;
-  inset-inline-end: 6rem;
-  inset-block-start: 0.25rem;
+  position: relative;
   pointer-events: none;
 }
 

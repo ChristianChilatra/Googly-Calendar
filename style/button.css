@@ -24,6 +24,10 @@
   transform: scale(.95);
 }
 
+.buttonCalendar.select:active {
+  transform: none;
+}
+
 .buttonCalendar>* {
   color: var(--gray30);
   font: var(--button-button);
@@ -47,6 +51,8 @@
   box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.2);
   transition: all .1s;
   gap: .5rem;
+  position: absolute;
+  inset-block-start: 1rem;
 }
 
 .buttonCalendar.isPlus i {

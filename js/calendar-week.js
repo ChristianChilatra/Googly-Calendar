@@ -28,8 +28,7 @@ export function showCalendarWeek() {
   setDaysDom(calendarWeekFormat, $weekDays, weekCurrent)//INSERTAMOS EN DOM DIAS DE LA SEMANA ACTUAL
 
   positionWeek()//PERMITE NAVEGAR EN FECHAS POR SEMANAS
-  returnCurrentDay()
-
+  returnCurrentDay()//NOS UBICA SEGUN EL DIA ACTUAL EN EL CALENDARIO
   showDateHeader(currentMonth)
   setGridTimeWeek()
 }
@@ -87,7 +86,7 @@ export function removeEventListenerWeek() {
 
   $evenButtonLastWeek.removeEventListener('click', showWeekLast)
   $evenButtonNextWeek.removeEventListener('click', showWeekNext);
-  $buttonCurrentWeek.removeEventListener("click", showCurrentWeek)
+  $buttonCurrentWeek.removeEventListener("click", showCurrentGrid)
 }
 
 function showWeekLast() {
@@ -121,11 +120,10 @@ function showWeekNext() {
 
 function returnCurrentDay() {
   const $buttonCurrentWeek = document.querySelector(".buttonCalendar")
-  $buttonCurrentWeek.addEventListener("click", showCurrentWeek)
+  $buttonCurrentWeek.addEventListener("click", showCurrentGrid)
 }
 
-
-function showCurrentWeek() {
+function showCurrentGrid() {
   currentDay = parseInt(getDateTimeNumberFormat().split("-")[2]) //NUMERO DE DIA ACTUAL
   currentMonth = getConfigDate(data.getMonth()).getMonth()
   amounthMonth = getAmounthMonth(currentMonth)
