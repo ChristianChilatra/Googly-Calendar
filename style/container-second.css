@@ -6,12 +6,17 @@
   position: relative;
 }
 
-.buttonCalendar.select{
+.buttonCalendar.select {
   inline-size: auto;
   padding-inline-start: 0.75rem;
   padding-inline-end: 1rem;
   user-select: none;
   outline-style: none;
-  stroke: red;
   appearance: none;
+  border-radius: 1rem;
+  text-align: center;
+}
+
+.buttonCalendar option {
+
 }
