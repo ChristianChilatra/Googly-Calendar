@@ -1,7 +1,10 @@
 @import url(mini-calendar.css);
 @import url(container-contact.css);
 @import url(my-calendar.css);
+
 .sideBar {
+  -webkit-transition: inline-size .3s;
+  -o-transition: inline-size .3s;
   transition: inline-size .3s;
   overflow-y: scroll;
 }
@@ -20,7 +23,12 @@
 }
 
 .wrapperSideBar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column;
   gap: 1.5rem;
   padding: 1.5rem;

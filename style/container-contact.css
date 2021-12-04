@@ -1,10 +1,21 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.3.6,
+* Autoprefixer: v10.3.1
+* Browsers: last 4 version
+*/
+
 .containerContact {
   block-size: 2.5rem;
   background: var(--gray10);
   border-start-start-radius: 0.25rem;
   border-start-end-radius: 0.25rem;
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -16,6 +27,7 @@
 .containerContact input {
   background: transparent;
   border: 0;
+  -webkit-border-after: 1px solid var(--gray10);
   border-block-end: 1px solid var(--gray10);
   padding: 0;
   block-size: 1.25rem;
@@ -25,10 +37,27 @@
   cursor: pointer;
 }
 
+.containerContact input::-webkit-input-placeholder {
+  content: 'HOla';
+}
+
+.containerContact input::-moz-placeholder {
+  content: 'HOla';
+}
+
+.containerContact input:-ms-input-placeholder {
+  content: 'HOla';
+}
+
+.containerContact input::-ms-input-placeholder {
+  content: 'HOla';
+}
+
 .containerContact input::placeholder {
   content: 'HOla';
 }
 
 .containerContact input:focus {
+  -webkit-border-after: 1px solid var(--blue10);
   border-block-end: 1px solid var(--blue10);
 }

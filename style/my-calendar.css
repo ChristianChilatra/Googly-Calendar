@@ -8,6 +8,9 @@
   color: var(--gray30);
   margin: 0 0 1rem 0;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   list-style: none;
   position: relative;
@@ -17,11 +20,17 @@
   content: url(../icon/icon-up.svg);
   position: absolute;
   inset-inline-end: 0;
+  -webkit-transform: var(--img-row-rotate);
+  -ms-transform: var(--img-row-rotate);
   transform: var(--img-row-rotate);
+  -webkit-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
   transition: all 0.4s ease;
 }
 
 .myCalendar-select {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   gap: 0.25rem;
   position: relative;
@@ -46,10 +55,14 @@
 }
 
 .myCalendar-select:nth-of-type(4) {
+  -webkit-margin-after: 0;
   margin-block-end: 0;
 }
 
 .myCalendar-select label {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   cursor: pointer;
 }
