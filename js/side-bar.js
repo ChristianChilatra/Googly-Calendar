@@ -1,7 +1,7 @@
 import {configMyCalendar} from "./config-my-calendar.js";
 
 const statusSideBar = {
-  open: false
+  open: true
 }
 
 //----------//Estado Inicial y SideBar Dropdown//----------//
