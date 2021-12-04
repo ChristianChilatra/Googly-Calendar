@@ -73,7 +73,7 @@ $buttonShowMonthFoll.addEventListener("click", showMonthFoll)
 function loaderEventListenerMiniCalendar(currentMonth){
   Array.from($daysMiniCalendar).forEach((el, index) =>{
     el.addEventListener("click", () =>{
-      if (index < new Date(data.getFullYear(), currentMonth, 1).getDay()){
+      if (index < new Date(data.getFullYear(), currentMonth, 1).getDay()){ //OBTENEMOS DIA DE LA SEMANA DONDE INCIA EL MES Y LO ESTABLECEMOS COMO LIMITE DE MES ACTUAL
         currentMonth--
         $miniCalendar.innerHTML = ""
         configMiniCalendar(currentDay, currentMonth)
