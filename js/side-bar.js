@@ -1,4 +1,3 @@
-import {configMiniCalendar} from "./config-mini-calendar.js";
 import {configMyCalendar} from "./config-my-calendar.js";
 
 const statusSideBar = {
@@ -20,7 +19,6 @@ export default function showSideBar(){
 
   $buttonSideBar.addEventListener("click", widthSidebar)
   setBlockSize()
-  configMiniCalendar()
   configMyCalendar()
 
   function widthSidebar(){

@@ -1,5 +1,6 @@
 .miniCalendar {
   padding-block-start: 2.5rem;
+  user-select: none;
 }
 
 .miniCalendar .month {

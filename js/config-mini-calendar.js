@@ -7,80 +7,41 @@ import { formatCurrentMonth } from "./utils/format-data.js"
 
 const $sideBar = document.querySelector(".sideBar")//---// DOM Side Bar //---//
 const $miniCalendar = $sideBar.querySelector(".days") //---// DOM Container Dias Calendario //---//
-//---// la variables "monthCurrent" nos permitira ejecutar consulta y
+//---// la variables "currentMonth" nos permitira ejecutar consulta y
 //visualizacion del mes deseado con datos formateados //---//
-// let monthCurrent = getMonth()
-
-//---// Mes actual//---//
-let monthCurrent = getDefaultData().getMonth()
-let currentDay = parseInt(getDateTimeNumberFormat().split("-")[2]) //NUMERO DE DIA ACTUAL
 
 //-------------------// Configuracion MIni Calendar //-------------------//
-export function configMiniCalendar() {
+export function configMiniCalendar(currentDay, currentMonth) {
 
   //---// Mostramos Mes Mini Calendar //---//
-  setMonthCalendar()
-
+  setMonthCalendar(currentMonth)
   //---// Calendario con Formato 7*6 //---//
-
-  const calendarAmount = formatCurrentMonth(monthCurrent) //---//Almacena los dias segun mes
-
+  const calendarAmount = formatCurrentMonth(currentMonth) //---//Almacena los dias segun mes
   //---// Agrega Dias al Mini Calendar //---//
-
   setDaysDom(calendarAmount, $miniCalendar)
-
   //---// Agrega estilo a NO dias del mes actual //---//
-
-  setDayStyle($miniCalendar, calendarAmount, getAmounthMonth(monthCurrent))
-
-
-
-  setStyleCurrentDay(currentDay,monthCurrent)
-
+  setDayStyle($miniCalendar, calendarAmount, getAmounthMonth(currentMonth))
+  setStyleCurrentDay(currentDay,currentMonth)
 }
 
-
-//---// Render Date Mini Calendar //---//
-eventSetMonth($sideBar, $miniCalendar)
-function eventSetMonth($sideBar, $miniCalendar) {
-  const $buttonShowMonthPrev = $sideBar.querySelector(".buttonPrevious")
-  const $buttonShowMonthFoll = $sideBar.querySelector(".buttonFollowing")
-
-  $buttonShowMonthPrev.addEventListener("click", showMonthPrev)
-  $buttonShowMonthFoll.addEventListener("click", showMonthFoll)
-
-  function showMonthPrev() {
-    monthCurrent--
-    $miniCalendar.innerHTML = ""
-    configMiniCalendar()
-  }
-  function showMonthFoll() {
-    monthCurrent++
-    $miniCalendar.innerHTML = ""
-    configMiniCalendar()
-  }
-}
 //---// Mostramos Mes Mini Calendar //---//
-function setMonthCalendar() {
+function setMonthCalendar(currentMonth) {
   const $monthTime = $sideBar.querySelector("time")
 
-  $monthTime.setAttribute("datatime", getDateTimeNumberFormat(getConfigDate(monthCurrent)))
-  $monthTime.querySelector("h2").textContent = getDateMonthFormat(getConfigDate(monthCurrent))
+  $monthTime.setAttribute("datatime", getDateTimeNumberFormat(getConfigDate(currentMonth)))
+  $monthTime.querySelector("h2").textContent = getDateMonthFormat(getConfigDate(currentMonth))
 }
 
 //---// Agrega Dias al Mini Calendar //---//
-
 function setDaysDom(calendarAmount, $miniCalendar) {
-
   calendarAmount.forEach(element => {
     $miniCalendar.append(createDOM(`
-      <a href="#" class="dayMini-calendar">${element}</a>
+      <a class="dayMini-calendar">${element}</a>
     `))
   })
 }
 
 //---// Agrega estilo a NO dias del mes actual //---//
-
 function setDayStyle($miniCalendar, calendarAmount, monthAmount) {
   const $daysMiniCalendar = $miniCalendar.querySelectorAll(".dayMini-calendar")
 
@@ -93,14 +54,15 @@ function setDayStyle($miniCalendar, calendarAmount, monthAmount) {
     }
   })
 }
+
 //---// Agrega estilo al dia actual //---//
-function setStyleCurrentDay(){
+function setStyleCurrentDay(currentDay, currentMonth){
   const $daysMiniCalendar = $miniCalendar.querySelectorAll(".dayMini-calendar")
   const elementInitial = new Date(getDefaultData().getFullYear(), getDefaultData().getMonth(),1)
   const elementFinal = new Date(getDefaultData().getFullYear(), getDefaultData().getMonth()+1,0)
 
   for (let index = elementInitial.getDay(); index < elementFinal.getDate(); index++) {
-    if (parseInt($daysMiniCalendar[index].textContent) === currentDay && monthCurrent === getDefaultData().getMonth()){
+    if (parseInt($daysMiniCalendar[index].textContent) === currentDay && currentMonth === getDefaultData().getMonth()){
       $daysMiniCalendar[index].style.background = "var(--blue10)"
       $daysMiniCalendar[index].style.color = "var(--white)"
     }

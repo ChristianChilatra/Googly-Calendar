@@ -5,14 +5,16 @@ function setFormatTime(configTime, configDate = date) {
   const formatTime = new Intl.DateTimeFormat("es-ES", configTime).format(configDate) //Intl.DateTimeFormat atrapa objeto de fecha formatiando datos
   return formatTime //retorna fecha modificada "Miércoles, 20 de Octubre"
 }
-
+// retorna nuevo objeto Date -> Fri Dec 03 2021 23:30:47 GMT-0500 (hora estándar de Colombia)
 export function getDefaultData() {
   return new Date()
 }
+// retorna date() del dia de inicio del mes -> Wed Dec 01 2021 00:00:00 GMT-0500 (hora estándar de Colombia)
 export function getConfigDate(value) {
   return new Date(date.getFullYear(), value, 1)
 }
 
+//retorna dias del mes -> Value: 0 (Mes Actual), 1 (Mes Siguiente), etc...
 export function getAmounthMonth(value) {
   return new Date(date.getFullYear(), value + 1, 0).getDate()
 }

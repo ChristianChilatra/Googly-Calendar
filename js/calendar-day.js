@@ -1,22 +1,13 @@
-import { getDefaultData, getConfigDate, getAmounthMonth, getDateTimeNumberFormat } from "./services/data-time.js";
+import {  getConfigDate, getDateTimeNumberFormat } from "./services/data-time.js";
 import { formatCurrentMonth, formatCalendarWeek } from "./utils/format-data.js"
 import { createDOM } from "./utils/dom.js"
 import { weekDaysList } from "./utils/dictionary.js"
 import showDateHeader from "./header.js"
-import { setGridTimeDay } from "./calendar-time.js"
-
-const data = getDefaultData()//OBJETO DATA
-let currentMonth = getConfigDate(data.getMonth()).getMonth() //MES ACTUAL
-let amounthMonth = getAmounthMonth(currentMonth) //DIAS DEL MES ACTUAL
-let currentDay = parseInt(getDateTimeNumberFormat().split("-")[2]) //NUMERO DE DIA ACTUAL
-const $weekDays = document.querySelector(".containerDays") //CONTENEDOR DE DIAS DE LA SEMANA
 
 
+export function showCalendarDay(data, currentMonth, currentDay, $containerDays) {
 
-
-export function showCalendarDay() {
-
-  $weekDays.style.cssText = `
+  $containerDays.style.cssText = `
   grid-template-columns: 5rem auto;
   grid-template-areas: ". DAY";
   justify-content: flex-start;`
@@ -24,17 +15,15 @@ export function showCalendarDay() {
   const weekCalendar = formatCurrentMonth(currentMonth)//ARRAY CON DIAS DEL MES + DIAS DEL MES ANTERIOR Y SIGUIENTE
   const calendarWeekFormat = formatCalendarWeek(weekCalendar) //ARRAY CON FORMATO CALENDARIO
 
-  let weekCurrent = searchCurrentDay(calendarWeekFormat, currentDay)//OBTENEMOS POSICION DEL ARRAY CON FORMATO CALENDARIO SEGUN DIA ACTUAL
+  let weekCurrent = searchCurrentDay(data, calendarWeekFormat, currentDay)//OBTENEMOS POSICION DEL ARRAY CON FORMATO CALENDARIO SEGUN DIA ACTUAL
 
-  setDaysDom(calendarWeekFormat, $weekDays, weekCurrent, currentDay)//INSERTAMOS EN DOM DIAS DE LA SEMANA ACTUAL
+  setDaysDom(data, calendarWeekFormat, $containerDays, weekCurrent, currentDay, currentMonth)//INSERTAMOS EN DOM DIAS DE LA SEMANA ACTUAL
 
-  positionWeek()//PERMITE NAVEGAR EN FECHAS POR SEMANAS
-  returnCurrentDay()
+
   showDateHeader(currentMonth)
-  setGridTimeDay()
 }
 
-function searchCurrentDay(calendarWeekFormat, currentDay) {
+function searchCurrentDay(data, calendarWeekFormat, currentDay) {
 
   let statusSearch = true
   let count = 0
@@ -55,7 +44,7 @@ function searchCurrentDay(calendarWeekFormat, currentDay) {
   return count
 }
 
-function setDaysDom(calendarWeekFormat, $weekDays, weekCurrent, currentDay) {
+function setDaysDom(data, calendarWeekFormat, $weekDays, weekCurrent, currentDay, currentMonth) {
 
   const day = calendarWeekFormat[weekCurrent].indexOf(currentDay)
   $weekDays.append(createDOM(`
@@ -71,66 +60,4 @@ function setDaysDom(calendarWeekFormat, $weekDays, weekCurrent, currentDay) {
     $currentDayDOM.querySelector("h3").style.color = "var(--blue10)"
   }
 }
-
-function positionWeek() {
-  const $evenButtonLastWeek = document.querySelector(".buttonPrevious")
-  const $evenButtonNextWeek = document.querySelector(".buttonFollowing")
-
-  $evenButtonLastWeek.addEventListener('click', showWeekLast)
-  $evenButtonNextWeek.addEventListener('click', showWeekNext);
-}
-export function removeEventListenerDay() {
-  const $evenButtonLastWeek = document.querySelector(".buttonPrevious")
-  const $evenButtonNextWeek = document.querySelector(".buttonFollowing")
-  const $buttonCurrentDay = document.querySelector(".buttonCalendar")
-
-  $evenButtonLastWeek.removeEventListener('click', showWeekLast)
-  $evenButtonNextWeek.removeEventListener('click', showWeekNext);
-  $buttonCurrentDay.removeEventListener("click", showCurrentDay)
-}
-
-
-
-function showWeekLast() {
-  if (Math.sign(currentDay - 1) === 1) {
-    currentDay--
-    $weekDays.innerHTML = ""
-    showCalendarDay()
-  } else {
-    currentMonth--
-    amounthMonth = getAmounthMonth(currentMonth)
-    currentDay = amounthMonth
-    $weekDays.innerHTML = ""
-    showCalendarDay()
-  }
-
-
-}
-function showWeekNext() {
-  if ((currentDay + 1) <= amounthMonth) {
-    currentDay++
-    $weekDays.innerHTML = ""
-    showCalendarDay()
-  } else {
-    currentMonth++
-    currentDay = 1
-    $weekDays.innerHTML = ""
-    showCalendarDay()
-  }
-}
-
-function returnCurrentDay() {
-  const $buttonCurrentDay = document.querySelector(".buttonCalendar")
-  $buttonCurrentDay.addEventListener("click", showCurrentDay)
-}
-
-
-function showCurrentDay() {
-  currentDay = parseInt(getDateTimeNumberFormat().split("-")[2]) //NUMERO DE DIA ACTUAL
-  currentMonth = getConfigDate(data.getMonth()).getMonth()
-  amounthMonth = getAmounthMonth(currentMonth)
-  $weekDays.innerHTML = ""
-  showCalendarDay()
-}
-
 
