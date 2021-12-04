@@ -14,6 +14,7 @@ const $buttonPlus = document.querySelector(".buttonCalendar.isPlus")
 
 export default function showSideBar(){
 
+
   statusSideBar.open ? open($widthSideBar) : close(0)
 
 
