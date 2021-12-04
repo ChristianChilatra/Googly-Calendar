@@ -107,8 +107,6 @@ function loaderEventListenerMiniCalendar(currentMonth){
   })
 }
 
-$containerCalendar.style.blockSize = `${window.innerHeight - $containerHeaderHeigth}px`
-
 function loaderGrid() {
   switch ($selectShowGrid.selectedOptions[0].value) {
     case "dia":
@@ -224,9 +222,5 @@ function showMonthFoll() {
 }
 
 window.addEventListener("resize", function () {
-  if ($selectShowGrid.selectedOptions[0].value === "dia") {
-
-  } else if ($selectShowGrid.selectedOptions[0].value === "mes") {
-    setGridTimeWeek()
-  }
+  $containerCalendar.style.blockSize = `${window.innerHeight - $containerHeaderHeigth}px`
 });
