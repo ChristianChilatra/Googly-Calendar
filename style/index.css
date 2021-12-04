@@ -32,5 +32,6 @@ body {
   grid-template-rows: 4rem auto;
   grid-template-areas: "header header" "calendar calendar";
   block-size: 100vh;
+  inline-size: auto;
   overflow: hidden;
 }
