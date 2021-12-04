@@ -7,6 +7,7 @@ import showDateHeader from "./header.js"
 
 export function showCalendarWeek(data, currentMonth, currentDay, $containerDays) {
 
+
   $containerDays.style.cssText = `
   grid-template-columns: 5rem repeat(7, 1fr);
   grid-template-areas: ". DOM LUN MAR MIE JUE VIE SAB";`

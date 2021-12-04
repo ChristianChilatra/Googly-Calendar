@@ -9,7 +9,6 @@
   -webkit-padding-end: .4rem;
   padding-inline-end: .4rem;
   inline-size: auto;
-  block-size: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 1.5rem (4rem)[24];

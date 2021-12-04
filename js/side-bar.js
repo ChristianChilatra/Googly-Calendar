@@ -1,7 +1,7 @@
 import {configMyCalendar} from "./config-my-calendar.js";
 
 const statusSideBar = {
-  open: true
+  open: false
 }
 
 //----------//Estado Inicial y SideBar Dropdown//----------//
@@ -9,7 +9,7 @@ const statusSideBar = {
 const $buttonSideBar = document.querySelector(".iconSidebar")
 const $sideBar = document.querySelector(".sideBar")
 const $header = document.querySelector("header")
-const $widthSideBar = 257
+const $widthSideBar = $sideBar.getBoundingClientRect().width
 const $buttonPlus = document.querySelector(".buttonCalendar.isPlus")
 
 export default function showSideBar(){

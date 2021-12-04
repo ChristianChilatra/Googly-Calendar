@@ -8,11 +8,6 @@ const data = getDefaultData()
 
 const $containerGridTime = document.querySelector(".containerTime")
 
-const $containerHeader = document.querySelector("header")
-const $containerHeaderHeight = $containerHeader.getBoundingClientRect().height
-const $containerCalendarWeek = document.querySelector(".containerDays")
-const $containerCalendarWeekHeight = $containerCalendarWeek.getBoundingClientRect().height
-
 export function setGridTimeWeek() {
 
     $containerGridTime.innerHTML = ""
@@ -33,8 +28,6 @@ export function setGridTimeWeek() {
         }
         count++
     }
-
-    $containerGridTime.style.blockSize = `${window.innerHeight - ($containerHeaderHeight + $containerCalendarWeekHeight)}px`
 
     const $selectGrid = $containerGridTime.querySelectorAll("div")
     const $selectFirstGrid = []
@@ -76,9 +69,6 @@ export function setGridTimeDay() {
             count++
         }
     }
-
-    $containerGridTime.style.blockSize = `${window.innerHeight - ($containerHeaderHeight + $containerCalendarWeekHeight)}px`
-
 
     const $selectGrid = $containerGridTime.querySelectorAll("div")
     const $selectFirstGrid = []
