@@ -7,5 +7,5 @@
   display: flex;
   position: relative;
   inset-inline-start: 0px;
-  block-size: 100%;
+  block-size: auto;
 }
