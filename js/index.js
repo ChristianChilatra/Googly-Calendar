@@ -220,3 +220,11 @@ function showMonthFoll() {
   configMiniCalendar(currentDay, currentMonth)
   loaderEventListenerMiniCalendar(currentMonth)
 }
+
+window.addEventListener("resize", function () {
+  if ($selectShowGrid.selectedOptions[0].value === "dia") {
+    setGridTimeDay()
+  } else if ($selectShowGrid.selectedOptions[0].value === "mes") {
+    setGridTimeWeek()
+  }
+});

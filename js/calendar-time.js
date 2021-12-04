@@ -34,7 +34,7 @@ export function setGridTimeWeek() {
         count++
     }
 
-    $containerGridTime.style.blockSize = `calc(${window.innerHeight}px - (${$containerHeaderHeight}px + ${$containerCalendarWeekHeight}px))`
+    $containerGridTime.style.blockSize = `${window.innerHeight - ($containerHeaderHeight + $containerCalendarWeekHeight)}px`
 
     const $selectGrid = $containerGridTime.querySelectorAll("div")
     const $selectFirstGrid = []
@@ -77,7 +77,8 @@ export function setGridTimeDay() {
         }
     }
 
-    $containerGridTime.style.blockSize = `calc(${window.innerHeight}px - (${$containerHeaderHeight}px + ${$containerCalendarWeekHeight}px))`
+    $containerGridTime.style.blockSize = `${window.innerHeight - ($containerHeaderHeight + $containerCalendarWeekHeight)}px`
+
 
     const $selectGrid = $containerGridTime.querySelectorAll("div")
     const $selectFirstGrid = []
