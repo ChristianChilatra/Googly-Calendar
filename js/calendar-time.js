@@ -11,7 +11,7 @@ const $containerGridTime = document.querySelector(".containerTime")
 const $containerHeader = document.querySelector("header")
 const $containerHeaderHeight = $containerHeader.getBoundingClientRect().height
 const $containerCalendarWeek = document.querySelector(".containerDays")
-const $containerCalendarWeekHeight = 100
+const $containerCalendarWeekHeight = $containerCalendarWeek.getBoundingClientRect().height
 
 export function setGridTimeWeek() {
 
@@ -34,7 +34,7 @@ export function setGridTimeWeek() {
         count++
     }
 
-    $containerGridTime.style.blockSize = `calc(100vh - (${$containerHeaderHeight}px + ${$containerCalendarWeekHeight}%))`
+    $containerGridTime.style.blockSize = `calc(${window.innerHeight}px - (${$containerHeaderHeight}px + ${$containerCalendarWeekHeight}px))`
 
     const $selectGrid = $containerGridTime.querySelectorAll("div")
     const $selectFirstGrid = []
@@ -77,7 +77,7 @@ export function setGridTimeDay() {
         }
     }
 
-    $containerGridTime.style.blockSize = `calc(100vh - (${$containerHeaderHeight}px + ${$containerCalendarWeekHeight}px))`
+    $containerGridTime.style.blockSize = `calc(${window.innerHeight}px - (${$containerHeaderHeight}px + ${$containerCalendarWeekHeight}px))`
 
     const $selectGrid = $containerGridTime.querySelectorAll("div")
     const $selectFirstGrid = []
