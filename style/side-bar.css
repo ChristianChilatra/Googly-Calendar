@@ -7,7 +7,7 @@
   -o-transition: inline-size .3s;
   transition: inline-size .3s;
   overflow-y: scroll;
-  block-size: 16rem;
+  inline-size: 16rem;
 }
 
 .sideBar:hover.sideBar::-webkit-scrollbar-thumb {
