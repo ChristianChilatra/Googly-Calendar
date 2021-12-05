@@ -28,7 +28,7 @@ const $weekDays = document.querySelector(".containerDays") //CONTENEDOR DE DIAS 
 
 showSideBar()
 configMiniCalendar(currentDay, currentMonth)
-loaderEventListenerMiniCalendar(currentMonth)
+loaderEventListenerMiniCalendar()
 loaderEventListenerDay()
 showCalendarDay(data, currentMonth, currentDay, $containerDays)
 setGridTimeDay()
@@ -68,19 +68,19 @@ $buttonShowMonthPrev.addEventListener("click", showMonthPrev)
 $buttonShowMonthFoll.addEventListener("click", showMonthFoll)
 
 //EVENT LISTENER AL SELECCIONAR DIA EN MINI CALENDAR
-function loaderEventListenerMiniCalendar(currentMonth) {
+function loaderEventListenerMiniCalendar() {
   Array.from($daysMiniCalendar).forEach((el, index) => {
     el.addEventListener("click", () => {
       if (index < new Date(data.getFullYear(), currentMonth, 1).getDay()) { //OBTENEMOS DIA DE LA SEMANA DONDE INCIA EL MES Y LO ESTABLECEMOS COMO LIMITE DE MES ACTUAL
         currentMonth--
         $miniCalendar.innerHTML = ""
         configMiniCalendar(currentDay, currentMonth)
-        loaderEventListenerMiniCalendar(currentMonth)
+        loaderEventListenerMiniCalendar()
       } else if (index >= (new Date(data.getFullYear(), currentMonth + 1, 0).getDate() + new Date(data.getFullYear(), currentMonth, 1).getDay())) {
         currentMonth++
         $miniCalendar.innerHTML = ""
         configMiniCalendar(currentDay, currentMonth)
-        loaderEventListenerMiniCalendar(currentMonth)
+        loaderEventListenerMiniCalendar()
       }
 
       currentDay = parseInt(el.textContent)
@@ -228,9 +228,11 @@ function showMonthFoll() {
 function isShowLineHr(){
   //**Se Genera en calendar-time.js */
   const $lineCurrentHour = document.querySelector(".currentHour")//LINEA QUE REPRESENTA HR ACTUAL
-  if (currentDay != parseInt(getDateTimeNumberFormat().split("-")[2])) {
+  if (currentDay != parseInt(getDateTimeNumberFormat().split("-")[2]) || currentMonth != getConfigDate(data.getMonth()).getMonth()) {
     $lineCurrentHour.style.cssText = `visibility: hidden`
   } else if (currentDay === parseInt(getDateTimeNumberFormat().split("-")[2]) && currentMonth === getConfigDate(data.getMonth()).getMonth()){
+    console.log(currentDay);
+    console.log(currentMonth);
     $lineCurrentHour.style.cssText = `visibility: visibility`
   }
 }
