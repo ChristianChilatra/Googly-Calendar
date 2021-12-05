@@ -231,8 +231,6 @@ function isShowLineHr(){
   if (currentDay != parseInt(getDateTimeNumberFormat().split("-")[2]) || currentMonth != getConfigDate(data.getMonth()).getMonth()) {
     $lineCurrentHour.style.cssText = `visibility: hidden`
   } else if (currentDay === parseInt(getDateTimeNumberFormat().split("-")[2]) && currentMonth === getConfigDate(data.getMonth()).getMonth()){
-    console.log(currentDay);
-    console.log(currentMonth);
     $lineCurrentHour.style.cssText = `visibility: visibility`
   }
 }
