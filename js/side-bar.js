@@ -9,13 +9,13 @@ const statusSideBar = {
 const $buttonSideBar = document.querySelector(".iconSidebar")
 const $sideBar = document.querySelector(".sideBar")
 const $header = document.querySelector("header")
-const $widthSideBar = $sideBar.clientWidth
+const widthSideBar = 16
 const $buttonPlus = document.querySelector(".buttonCalendar.isPlus")
 
 export default function showSideBar(){
 
 
-  statusSideBar.open ? open($widthSideBar) : close(0)
+  statusSideBar.open ? open(widthSideBar) : close(0)
 
 
   $buttonSideBar.addEventListener("click", widthSidebar)
@@ -26,7 +26,7 @@ export default function showSideBar(){
     if (statusSideBar.open){
       close(0)
     }else{
-      open($widthSideBar)
+      open(widthSideBar)
     }
   }
 
@@ -43,7 +43,7 @@ export default function showSideBar(){
 
   function setInlineSize(value){
     console.log(value);
-    $sideBar.style.inlineSize = `${value}px`
+    $sideBar.style.inlineSize = `${value}rem`
   }
 
   function setBlockSize(){
