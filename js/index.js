@@ -230,7 +230,7 @@ function isShowLineHr(){
   const $lineCurrentHour = document.querySelector(".currentHour")//LINEA QUE REPRESENTA HR ACTUAL
   if (currentDay != parseInt(getDateTimeNumberFormat().split("-")[2])) {
     $lineCurrentHour.style.cssText = `visibility: hidden`
-  }else{
+  } else if (currentDay === parseInt(getDateTimeNumberFormat().split("-")[2]) && currentMonth === getConfigDate(data.getMonth()).getMonth()){
     $lineCurrentHour.style.cssText = `visibility: visibility`
   }
 }
