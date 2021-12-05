@@ -32,6 +32,7 @@ loaderEventListenerMiniCalendar()
 loaderEventListenerDay()
 showCalendarDay(data, currentMonth, currentDay, $containerDays)
 setGridTimeDay()
+isShowLineHr()
 
 //CARGAMOS LOS EVENTOS DE ANTERIOR Y SIGUIENTE DIA PARA GRID "DIA"
 function loaderEventListenerDay() {
