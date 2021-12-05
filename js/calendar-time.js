@@ -8,6 +8,10 @@ const data = getDefaultData()
 
 const $containerGridTime = document.querySelector(".containerTime")
 
+// window.addEventListener("resize", () => {
+//     $setBlockSize()
+// });
+
 export function setGridTimeWeek() {
 
     $containerGridTime.innerHTML = ""

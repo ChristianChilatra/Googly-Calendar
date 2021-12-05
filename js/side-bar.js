@@ -59,6 +59,9 @@ export default function showSideBar(){
     $buttonPlus.querySelector("p").style.display = "none"
   }
   function blockSizeSideBar(value){
-    $sideBar.style.blockSize = `calc(100vh - ${value}px)`
+    $sideBar.style.blockSize = `${window.innerHeight - value}px`
   }
+  window.addEventListener("resize", () => {
+    setBlockSize()
+  });
 }

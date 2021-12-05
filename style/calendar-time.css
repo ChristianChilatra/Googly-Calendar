@@ -9,11 +9,13 @@
   -webkit-padding-end: .4rem;
   padding-inline-end: .4rem;
   inline-size: auto;
+  border: 1px solid red;
+  block-size: calc(100vh - 151px);
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1.5rem (4rem)[24];
+  -ms-grid-rows: 1.5rem (4rem);
   grid-template-rows: 1.5rem repeat(24, 4rem);
-  overflow: auto;
+  overflow-y: auto;
 }
 
 .containerTime::-webkit-scrollbar {

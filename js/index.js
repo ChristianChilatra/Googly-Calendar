@@ -17,7 +17,7 @@ const $miniCalendar = $sideBar.querySelector(".days")//CONTENEDOR MINI CALENDAR
 const $daysMiniCalendar = ($miniCalendar.children)//NODELIST DIAS DEL MES MINI CALENDAR
 const $buttonShowMonthPrev = $sideBar.querySelector(".buttonPrevious")//CONTENEDOR BOTON "ANTERIOR" MINI CALENDAR
 const $buttonShowMonthFoll = $sideBar.querySelector(".buttonFollowing")//CONTENEDOR BOTON "SIGUIENTE" MINI CALENDAR
-const $containerHeaderHeigth = document.querySelector("header").getBoundingClientRect().height
+
 
 const data = getDefaultData()//OBJETO DATA
 let currentMonth = getConfigDate(data.getMonth()).getMonth() //MES ACTUAL
@@ -220,7 +220,3 @@ function showMonthFoll() {
   configMiniCalendar(currentDay, currentMonth)
   loaderEventListenerMiniCalendar(currentMonth)
 }
-
-window.addEventListener("resize", function () {
-  $containerCalendar.style.blockSize = `${window.innerHeight - $containerHeaderHeigth}px`
-});
