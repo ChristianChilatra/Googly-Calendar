@@ -115,6 +115,7 @@ function loaderGrid() {
       $containerGrid.innerHTML = ""
       showCalendarDay(data, currentMonth, currentDay, $containerDays)
       setGridTimeDay()
+      isShowLineHr()
       break;
     case "mes":
       removeEventListenerDay()
@@ -123,6 +124,7 @@ function loaderGrid() {
       $containerGrid.innerHTML = ""
       showCalendarWeek(data, currentMonth, currentDay, $containerDays)
       setGridTimeWeek()
+      isShowLineHr()
       break;
     case "año":
       break;
@@ -228,9 +230,7 @@ function isShowLineHr(){
   const $lineCurrentHour = document.querySelector(".currentHour")//LINEA QUE REPRESENTA HR ACTUAL
   if (currentDay != parseInt(getDateTimeNumberFormat().split("-")[2])) {
     $lineCurrentHour.style.cssText = `visibility: hidden`
-    console.log("si");
   }else{
     $lineCurrentHour.style.cssText = `visibility: visibility`
-    console.log("no");
   }
 }
