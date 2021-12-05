@@ -42,6 +42,7 @@ export default function showSideBar(){
   }
 
   function setInlineSize(value){
+    console.log(value);
     $sideBar.style.inlineSize = `${value}px`
   }
 
