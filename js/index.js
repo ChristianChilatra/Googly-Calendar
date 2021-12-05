@@ -1,6 +1,6 @@
 import showSideBar from "./side-bar.js"
-import { showCalendarDay} from "./calendar-day.js"
-import { showCalendarWeek} from "./calendar-week.js"
+import { showCalendarDay } from "./calendar-day.js"
+import { showCalendarWeek } from "./calendar-week.js"
 import { getDefaultData, getConfigDate, getAmounthMonth, getDateTimeNumberFormat } from "./services/data-time.js";
 import { setGridTimeWeek, setGridTimeDay } from "./calendar-time.js"
 import { configMiniCalendar } from "./config-mini-calendar.js";
@@ -33,17 +33,14 @@ loaderEventListenerDay()
 showCalendarDay(data, currentMonth, currentDay, $containerDays)
 setGridTimeDay()
 
-
-
-
 //CARGAMOS LOS EVENTOS DE ANTERIOR Y SIGUIENTE DIA PARA GRID "DIA"
-function loaderEventListenerDay(){
-    $evenButtonLastWeek.addEventListener('click', showDayLast)
-    $evenButtonNextWeek.addEventListener('click', showDayNext)
-    $buttonCurrentDay.addEventListener("click", showCurrentDay)
+function loaderEventListenerDay() {
+  $evenButtonLastWeek.addEventListener('click', showDayLast)
+  $evenButtonNextWeek.addEventListener('click', showDayNext)
+  $buttonCurrentDay.addEventListener("click", showCurrentDay)
 }
 //CARGAMOS LOS EVENTOS DE ANTERIOR Y SIGUIENTE SEMANA PARA GRID "SEMANA"
-function loaderEventListenerWeek(){
+function loaderEventListenerWeek() {
   $evenButtonLastWeek.addEventListener('click', showWeekLast)
   $evenButtonNextWeek.addEventListener('click', showWeekNext);
   $buttonCurrentDay.addEventListener("click", showCurrentGrid)
@@ -71,15 +68,15 @@ $buttonShowMonthPrev.addEventListener("click", showMonthPrev)
 $buttonShowMonthFoll.addEventListener("click", showMonthFoll)
 
 //EVENT LISTENER AL SELECCIONAR DIA EN MINI CALENDAR
-function loaderEventListenerMiniCalendar(currentMonth){
-  Array.from($daysMiniCalendar).forEach((el, index) =>{
-    el.addEventListener("click", () =>{
-      if (index < new Date(data.getFullYear(), currentMonth, 1).getDay()){ //OBTENEMOS DIA DE LA SEMANA DONDE INCIA EL MES Y LO ESTABLECEMOS COMO LIMITE DE MES ACTUAL
+function loaderEventListenerMiniCalendar(currentMonth) {
+  Array.from($daysMiniCalendar).forEach((el, index) => {
+    el.addEventListener("click", () => {
+      if (index < new Date(data.getFullYear(), currentMonth, 1).getDay()) { //OBTENEMOS DIA DE LA SEMANA DONDE INCIA EL MES Y LO ESTABLECEMOS COMO LIMITE DE MES ACTUAL
         currentMonth--
         $miniCalendar.innerHTML = ""
         configMiniCalendar(currentDay, currentMonth)
         loaderEventListenerMiniCalendar(currentMonth)
-      } else if (index >= (new Date(data.getFullYear(), currentMonth + 1, 0).getDate() + new Date(data.getFullYear(), currentMonth, 1).getDay())){
+      } else if (index >= (new Date(data.getFullYear(), currentMonth + 1, 0).getDate() + new Date(data.getFullYear(), currentMonth, 1).getDay())) {
         currentMonth++
         $miniCalendar.innerHTML = ""
         configMiniCalendar(currentDay, currentMonth)
@@ -88,20 +85,22 @@ function loaderEventListenerMiniCalendar(currentMonth){
 
       currentDay = parseInt(el.textContent)
 
-      if ($selectShowGrid.selectedOptions[0].value === "dia"){
+      if ($selectShowGrid.selectedOptions[0].value === "dia") {
         removeEventListenerWeek()
         loaderEventListenerDay()
         $containerDays.innerHTML = ""
         $containerGrid.innerHTML = ""
         showCalendarDay(data, currentMonth, currentDay, $containerDays)
         setGridTimeDay()
-      } else if ($selectShowGrid.selectedOptions[0].value === "mes"){
+        isShowLineHr()
+      } else if ($selectShowGrid.selectedOptions[0].value === "mes") {
         removeEventListenerDay()
         loaderEventListenerWeek()
         $containerDays.innerHTML = ""
         $containerGrid.innerHTML = ""
         showCalendarWeek(data, currentMonth, currentDay, $containerDays)
         setGridTimeWeek()
+        isShowLineHr()
       }
     })
   })
@@ -130,6 +129,7 @@ function loaderGrid() {
   }
 }
 
+
 function showDayLast() {
   if (Math.sign(currentDay - 1) === 1) {
     currentDay--
@@ -142,8 +142,7 @@ function showDayLast() {
     $weekDays.innerHTML = ""
     showCalendarDay(data, currentMonth, currentDay, $containerDays)
   }
-
-
+  isShowLineHr()
 }
 function showDayNext() {
   if ((currentDay + 1) <= amounthMonth) {
@@ -156,6 +155,7 @@ function showDayNext() {
     $weekDays.innerHTML = ""
     showCalendarDay(data, currentMonth, currentDay, $containerDays)
   }
+  isShowLineHr()
 }
 
 function showWeekLast() {
@@ -170,8 +170,7 @@ function showWeekLast() {
     $weekDays.innerHTML = ""
     showCalendarWeek(data, currentMonth, currentDay, $containerDays)
   }
-
-
+  isShowLineHr()
 }
 function showWeekNext() {
   if ((currentDay + 7) <= amounthMonth) {
@@ -185,6 +184,7 @@ function showWeekNext() {
     $weekDays.innerHTML = ""
     showCalendarWeek(data, currentMonth, currentDay, $containerDays)
   }
+  isShowLineHr()
 }
 
 function showCurrentDay() {
@@ -196,6 +196,7 @@ function showCurrentDay() {
   $miniCalendar.innerHTML = ""
   configMiniCalendar(currentDay, currentMonth)
   loaderEventListenerMiniCalendar(currentMonth)
+  isShowLineHr()
 }
 function showCurrentGrid() {
   currentDay = parseInt(getDateTimeNumberFormat().split("-")[2]) //NUMERO DE DIA ACTUAL
@@ -206,6 +207,7 @@ function showCurrentGrid() {
   $miniCalendar.innerHTML = ""
   configMiniCalendar(currentDay, currentMonth)
   loaderEventListenerMiniCalendar(currentMonth)
+  isShowLineHr()
 }
 
 function showMonthPrev() {
@@ -219,4 +221,16 @@ function showMonthFoll() {
   $miniCalendar.innerHTML = ""
   configMiniCalendar(currentDay, currentMonth)
   loaderEventListenerMiniCalendar(currentMonth)
+}
+
+function isShowLineHr(){
+  //**Se Genera en calendar-time.js */
+  const $lineCurrentHour = document.querySelector(".currentHour")//LINEA QUE REPRESENTA HR ACTUAL
+  if (currentDay != parseInt(getDateTimeNumberFormat().split("-")[2])) {
+    $lineCurrentHour.style.cssText = `visibility: hidden`
+    console.log("si");
+  }else{
+    $lineCurrentHour.style.cssText = `visibility: visibility`
+    console.log("no");
+  }
 }

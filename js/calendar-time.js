@@ -8,10 +8,6 @@ const data = getDefaultData()
 
 const $containerGridTime = document.querySelector(".containerTime")
 
-// window.addEventListener("resize", () => {
-//     $setBlockSize()
-// });
-
 export function setGridTimeWeek() {
 
     $containerGridTime.innerHTML = ""
@@ -104,11 +100,8 @@ function setCurrentHourDay() {
         `))
         }
     })
-
 }
 function setCurrentHourWeek() {
-
-
 
     const $containerTask = document.querySelectorAll(".containerTask")
     $containerTask.forEach($element => {
