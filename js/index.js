@@ -18,6 +18,17 @@ const $daysMiniCalendar = ($miniCalendar.children)//NODELIST DIAS DEL MES MINI C
 const $buttonShowMonthPrev = $sideBar.querySelector(".buttonPrevious")//CONTENEDOR BOTON "ANTERIOR" MINI CALENDAR
 const $buttonShowMonthFoll = $sideBar.querySelector(".buttonFollowing")//CONTENEDOR BOTON "SIGUIENTE" MINI CALENDAR
 
+window.onload = loadPage
+
+function loadPage(){
+  showSideBar()
+  configMiniCalendar(currentDay, currentMonth)
+  loaderEventListenerMiniCalendar()
+  loaderEventListenerDay()
+  showCalendarDay(data, currentMonth, currentDay, $containerDays)
+  setGridTimeDay()
+  isShowLineHr()
+}
 
 const data = getDefaultData()//OBJETO DATA
 let currentMonth = getConfigDate(data.getMonth()).getMonth() //MES ACTUAL
