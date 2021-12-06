@@ -26,14 +26,6 @@ let currentDay = parseInt(getDateTimeNumberFormat().split("-")[2]) //NUMERO DE D
 const $weekDays = document.querySelector(".containerDays") //CONTENEDOR DE DIAS DE LA SEMANA
 
 
-showSideBar()
-configMiniCalendar(currentDay, currentMonth)
-loaderEventListenerMiniCalendar()
-loaderEventListenerDay()
-showCalendarDay(data, currentMonth, currentDay, $containerDays)
-setGridTimeDay()
-isShowLineHr()
-
 //CARGAMOS LOS EVENTOS DE ANTERIOR Y SIGUIENTE DIA PARA GRID "DIA"
 function loaderEventListenerDay() {
   $evenButtonLastWeek.addEventListener('click', showDayLast)
