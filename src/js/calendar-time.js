@@ -1,6 +1,6 @@
-import { createDOM } from "./utils/dom.js";
-import { hoursDay } from "./utils/dictionary.js";
-import { getDefaultData } from "./services/data-time.js";
+import { createDOM } from "../utils/dom.js";
+import { hoursDay } from "../utils/dictionary.js";
+import { getDefaultData } from "../services/data-time.js";
 import setTask from "./calendar-task.js"
 
 

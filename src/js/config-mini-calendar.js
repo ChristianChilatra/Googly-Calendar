@@ -1,6 +1,6 @@
-import { getDefaultData, getConfigDate, getAmounthMonth, getDateTimeNumberFormat, getDateMonthFormat} from "./services/data-time.js"
-import { createDOM } from "./utils/dom.js"
-import { formatCurrentMonth } from "./utils/format-data.js"
+import { getDefaultData, getConfigDate, getAmounthMonth, getDateTimeNumberFormat, getDateMonthFormat} from "../services/data-time.js"
+import { createDOM } from "../utils/dom.js"
+import { formatCurrentMonth } from "../utils/format-data.js"
 
 //---// Mini Calendar //---//
 //-------------------// Variables iniciales DOM //-------------------//

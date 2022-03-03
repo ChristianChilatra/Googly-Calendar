@@ -1,8 +1,35 @@
+@import url(icons.css);
 @import url(header.css);
 @import url(button.css);
-@import url(icons.css);
 @import url(calendar.css);
 @import url(modal-meet.css);
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../assets/font/roboto-v29-latin-regular.woff2') format('woff2'),
+    url('../assets/font/roboto-v29-latin-regular.woff') format('woff');
+}
+
+/* roboto-500 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../assets/font/roboto-v29-latin-500.woff2') format('woff2'),
+    url('../assets/font/roboto-v29-latin-500.woff') format('woff');
+}
+
+/* roboto-700 - latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: url('../assets/font/roboto-v29-latin-700.woff2') format('woff2'),
+    url('../assets/font/roboto-v29-latin-700.woff') format('woff');
+}
+
 :root {
   font-family: 'Roboto', sans-serif;
   --white: #fffffe;
@@ -30,7 +57,7 @@ body {
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: 4rem auto;
-  grid-template-areas: "header header" "calendar calendar";
+  grid-template-areas: "header header""calendar calendar";
   block-size: 100vh;
   inline-size: 100%;
   overflow: hidden;

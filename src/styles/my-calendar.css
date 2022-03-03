@@ -1,6 +1,6 @@
 .myCalendar {
   --img-row-rotate: rotate(180deg);
-  --statusCheck: url(../icon/Icon-checkVoid.svg);
+  --statusCheck: url(../assets/icon/Icon-checkVoid.svg);
 }
 
 .myCalendar details summary {
@@ -17,7 +17,7 @@
 }
 
 .myCalendar details summary::after {
-  content: url(../icon/icon-up.svg);
+  content: url(../assets/icon/icon-up.svg);
   position: absolute;
   inset-inline-end: 0;
   -webkit-transform: var(--img-row-rotate);
@@ -42,7 +42,7 @@
 }
 
 .myCalendar-select input::before {
-  content: url(../icon/Icon-checkVoid.svg);
+  content: url(../assets/icon/Icon-checkVoid.svg);
   visibility: visible;
   position: absolute;
   inset-block-start: -.1rem;
@@ -51,7 +51,7 @@
 }
 
 .myCalendar-select input:checked::before {
-  content: url(../icon/icon-check.svg);
+  content: url(../assets/icon/icon-check.svg);
 }
 
 .myCalendar-select:nth-of-type(4) {

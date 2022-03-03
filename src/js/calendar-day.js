@@ -1,7 +1,7 @@
-import {  getConfigDate, getDateTimeNumberFormat } from "./services/data-time.js";
-import { formatCurrentMonth, formatCalendarWeek } from "./utils/format-data.js"
-import { createDOM } from "./utils/dom.js"
-import { weekDaysList } from "./utils/dictionary.js"
+import {  getConfigDate, getDateTimeNumberFormat } from "../services/data-time.js";
+import { formatCurrentMonth, formatCalendarWeek } from "../utils/format-data.js"
+import { createDOM } from "../utils/dom.js"
+import { weekDaysList } from "../utils/dictionary.js"
 import showDateHeader from "./header.js"
 
 

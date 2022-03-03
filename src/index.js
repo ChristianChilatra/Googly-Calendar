@@ -1,9 +1,10 @@
-import showSideBar from "./side-bar.js"
-import { showCalendarDay } from "./calendar-day.js"
-import { showCalendarWeek } from "./calendar-week.js"
+import './styles/index.css'
+import showSideBar from "./js/side-bar.js"
+import { showCalendarDay } from "./js/calendar-day.js"
+import { showCalendarWeek } from "./js/calendar-week.js"
 import { getDefaultData, getConfigDate, getAmounthMonth, getDateTimeNumberFormat } from "./services/data-time.js";
-import { setGridTimeWeek, setGridTimeDay } from "./calendar-time.js"
-import { configMiniCalendar } from "./config-mini-calendar.js";
+import { setGridTimeWeek, setGridTimeDay } from "./js/calendar-time.js"
+import { configMiniCalendar } from "./js/config-mini-calendar.js";
 
 const $selectShowGrid = document.querySelector("#selectTime")//SELECCION GRID (DIA / SEMANA)
 const $containerCalendar = document.querySelector(".calendarWeek")//CONTENEDOR PRINCIPAL CALENDARIO

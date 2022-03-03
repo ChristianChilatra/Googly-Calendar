@@ -1,4 +1,4 @@
-import { getConfigDate, getDateTimeFormat, getDateTimeNumberFormat } from "./services/data-time.js"
+import { getConfigDate, getDateTimeFormat, getDateTimeNumberFormat } from "../services/data-time.js"
 
 //dia Mes año//      //año/mes/dia//
 
