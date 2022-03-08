@@ -70,9 +70,5 @@ function validationView(event) {
 }
 
 function searchPath(list) {
-  if (list.indexOf("dialog.modalMeet")!= -1) {
-    return true
-  }else{
-    return false
-  }
+  return (list.indexOf("dialog.modalMeet")!= -1)
 }

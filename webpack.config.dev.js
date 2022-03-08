@@ -1,11 +1,8 @@
 const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
-const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
-  watch: true,
   entry: "./src/index.js",
   output: {
     clean: true,
@@ -15,6 +12,7 @@ module.exports = {
   resolve: {
     extensions: [".js"],
   },
+  watch: true,
   module: {
     rules: [
       {
@@ -37,21 +35,21 @@ module.exports = {
         test: /\.(woff|woff2|ttf|eot)$/i,
         type: "asset/resource",
         generator: {
-          filename: "assets/fonts/[contenthash].[ext][query]",
+          filename: "assets/fonts/[contenthash][ext][query]",
         },
       },
       {
         test: /\.svg$/i,
         type: "asset/resource",
         generator: {
-          filename: "assets/icon/[contenthash].[ext][query]",
+          filename: "assets/icon/[contenthash][ext][query]",
         },
       },
       {
         test: /\.png$/i,
         type: "asset/resource",
         generator: {
-          filename: "assets/img/[contenthash].[ext][query]",
+          filename: "assets/img/[contenthash][ext][query]",
         },
       },
     ],
@@ -63,7 +61,7 @@ module.exports = {
       filename: "./index.html",
     }),
     new MiniCssExtractPlugin({
-      filename: "[name].[chunkhash].css",
+      filename: "./style/[name].[chunkhash].css",
     }),
   ],
 };

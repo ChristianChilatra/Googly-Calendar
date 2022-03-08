@@ -3,7 +3,7 @@
 .modalMeet {
   padding: 1.25rem 3rem;
   inline-size: 26rem;
-  block-size: 28rem;
+  block-size: auto;
   border-radius: .5rem;
   border: none;
   box-shadow: 0.08734026551246643px 2.5244154930114746px 7.496296405792236px 0px rgba(0, 0, 0, 0.07);
